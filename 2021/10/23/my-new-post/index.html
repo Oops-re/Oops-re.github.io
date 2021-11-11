@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>my new post | blog</title><script src="https://cdn.bootcss.com/valine/1.4.4/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+</head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a><a href="/schedule/">Synopsis</a></nav></header><main style="flex-direction: row-reverse"><article><div id="post-bg"><div id="post-title"><h1>my new post</h1><hr></div><div id="post-content"><h2 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h2><p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023194558411.png"></p>
+<p>点击开始创建，其仓库名设置为 <strong>你的用户名.github.io</strong> ,（其他名称无效）这样你之后的的网站访问地址就是http://(你的用户名).github.io 像我的用户名是Oops-re，那我就设置为 <strong>Oop-re.github.io</strong> 。</p>
+<h2 id="2-配置ssh密钥"><a href="#2-配置ssh密钥" class="headerlink" title="2.配置ssh密钥"></a>2.配置ssh密钥</h2><p>为了安全起见，所以使用给github生成的密钥作为链接的ssh密钥</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
+
+<p>如果提示：No such file or directory 说明你是第一次使用git。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在本地生成生成密钥文件，但我使用的命令是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<p>然后按3次确认，然后就会在电脑的用户文件生成 <strong>.ssh\id_rsa.pub</strong> 复制里面的东西，然后在给github的<strong>settings</strong>找到 <strong>SSH and GPG keys</strong> 复制到 <strong>key</strong> 里，Title随便写</p>
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023200557367.png"></p>
+<h3 id="2-1检查配置是否成功"><a href="#2-1检查配置是否成功" class="headerlink" title="2.1检查配置是否成功"></a>2.1检查配置是否成功</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com # 注意邮箱地址不用改</span><br></pre></td></tr></table></figure>
+
+<p>这就是正常实现配置的结果</p>
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023200937322.png"></p>
+<h3 id="2-2进一步的配置"><a href="#2-2进一步的配置" class="headerlink" title="2.2进一步的配置"></a>2.2进一步的配置</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;liuxianan&quot;</span><span class="comment">// 你的github用户名，非昵称</span></span><br><span class="line">$ git config --global user.email  <span class="string">&quot;xxx@qq.com&quot;</span><span class="comment">// 填写你的github注册邮箱</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用hexo写博客"><a href="#3-使用hexo写博客" class="headerlink" title="3.使用hexo写博客"></a>3.使用hexo写博客</h2><h3 id="3-1安装"><a href="#3-1安装" class="headerlink" title="3.1安装"></a>3.1安装</h3><p>首先要确保node.js环境配置已经完成，然后是指令 <strong>npm install -g hexo</strong> 。该指令能够在git bash和cmd下运行，我这是使用的cmd下运行，运行结果如下：<img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023204116963.png"></p>
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023204136289.png"></p>
+<h3 id="3-2初始化"><a href="#3-2初始化" class="headerlink" title="3.2初始化"></a>3.2初始化</h3><p>在电脑中创建一个hexo文件，我在的路径是 E:/mkd/hexo </p>
+<p>在git bash 修改目录到hexo文件</p>
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023210317633.png" alt="image-20211023210317633"></p>
+<p>然后敲命令 <strong>hexo init</strong> 就会在目录下生成文件</p>
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023210347048.png" alt="image-20211023210347048"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g # 生成</span><br><span class="line">    <span class="comment">//会生成public文件夹，并生成诸多文件</span></span><br><span class="line">$ hexo s # 启动服务</span><br><span class="line">    hexo s是开启本地预览服务，打开浏览器访问 http:<span class="comment">//localhost:4000 即可看到内容</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/10/23/my-new-post/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211023210601941.png"></p><div id="paginator"></div></div><div id="post-footer"><hr><a href="/2021/10/24/big-cloud/">← Prev big cloud</a><hr></div><div id="bottom-btn"><a id="to-index" href="#post-index" title="index">≡</a><a id="to-top" href="#post-title" title="to top">∧</a></div><div id="Valine"></div><script>new Valine({
+ el: '#Valine'
+ , appId: ''
+ , appKey: ''
+ , placeholder: '此条评论委托企鹅物流发送'
+})</script></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/"> Dr.Mr.Li</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">4</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">2</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">0</span></div></section></div><div id="aside-block"></div><footer style="text-align: right"><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><wbr><wbr><nobr>published with&nbsp;<a target="_blank" rel="noopener" href="http://hexo.io">Hexo&nbsp;</a></nobr><wbr><nobr>Theme&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight&nbsp;</a></nobr><wbr><nobr>by&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script></body></html>
