@@ -9,27 +9,6 @@
   </url>
   
   <url>
-    <loc>https://oops-re.github.io/2021/10/23/my-new-post/</loc>
-    
-    <lastmod>2021-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://oops-re.github.io/2021/11/11/p/</loc>
-    
-    <lastmod>2021-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://oops-re.github.io/2021/10/24/big-cloud/</loc>
-    
-    <lastmod>2021-10-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://oops-re.github.io/2021/11/11/hello-world/</loc>
     
     <lastmod>2021-10-23</lastmod>
@@ -54,13 +33,6 @@
   
   <url>
     <loc>https://oops-re.github.io/tags/blog/</loc>
-    <lastmod>2021-11-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://oops-re.github.io/tags/lll/</loc>
     <lastmod>2021-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
