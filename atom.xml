@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>blog</title>
   
-  <subtitle>Sinevil</subtitle>
-  <link href="https://sinevil.github.io/atom.xml" rel="self"/>
+  <subtitle>Oops-re</subtitle>
+  <link href="https://oops-re.github.io/atom.xml" rel="self"/>
   
-  <link href="https://sinevil.github.io/"/>
+  <link href="https://oops-re.github.io/"/>
   <updated>2021-11-11T03:59:09.798Z</updated>
-  <id>https://sinevil.github.io/</id>
+  <id>https://oops-re.github.io/</id>
   
   <author>
     <name>Mr.Li</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>blog搭建</title>
-    <link href="https://sinevil.github.io/2021/11/11/blog/"/>
-    <id>https://sinevil.github.io/2021/11/11/blog/</id>
+    <link href="https://oops-re.github.io/2021/11/11/blog/"/>
+    <id>https://oops-re.github.io/2021/11/11/blog/</id>
     <published>2021-11-11T03:52:27.000Z</published>
     <updated>2021-11-11T03:59:09.798Z</updated>
     
@@ -35,14 +35,14 @@
     
     
     
-    <category term="blog" scheme="https://sinevil.github.io/tags/blog/"/>
+    <category term="blog" scheme="https://oops-re.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://sinevil.github.io/2021/11/11/hello-world/"/>
-    <id>https://sinevil.github.io/2021/11/11/hello-world/</id>
+    <link href="https://oops-re.github.io/2021/11/11/hello-world/"/>
+    <id>https://oops-re.github.io/2021/11/11/hello-world/</id>
     <published>2021-11-11T03:33:14.874Z</published>
     <updated>2021-10-23T15:13:06.000Z</updated>
     
@@ -58,8 +58,8 @@
   
   <entry>
     <title>p</title>
-    <link href="https://sinevil.github.io/2021/11/11/p/"/>
-    <id>https://sinevil.github.io/2021/11/11/p/</id>
+    <link href="https://oops-re.github.io/2021/11/11/p/"/>
+    <id>https://oops-re.github.io/2021/11/11/p/</id>
     <published>2021-11-11T01:51:45.000Z</published>
     <updated>2021-11-11T03:19:24.000Z</updated>
     
@@ -76,14 +76,14 @@
     
     
     
-    <category term="lll" scheme="https://sinevil.github.io/tags/lll/"/>
+    <category term="lll" scheme="https://oops-re.github.io/tags/lll/"/>
     
   </entry>
   
   <entry>
     <title>big cloud</title>
-    <link href="https://sinevil.github.io/2021/10/24/big-cloud/"/>
-    <id>https://sinevil.github.io/2021/10/24/big-cloud/</id>
+    <link href="https://oops-re.github.io/2021/10/24/big-cloud/"/>
+    <id>https://oops-re.github.io/2021/10/24/big-cloud/</id>
     <published>2021-10-24T10:49:13.000Z</published>
     <updated>2021-10-24T10:50:44.000Z</updated>
     
@@ -105,8 +105,8 @@
   
   <entry>
     <title>my new post</title>
-    <link href="https://sinevil.github.io/2021/10/23/my-new-post/"/>
-    <id>https://sinevil.github.io/2021/10/23/my-new-post/</id>
+    <link href="https://oops-re.github.io/2021/10/23/my-new-post/"/>
+    <id>https://oops-re.github.io/2021/10/23/my-new-post/</id>
     <published>2021-10-23T15:21:22.000Z</published>
     <updated>2021-11-11T03:51:07.973Z</updated>
     
@@ -122,7 +122,7 @@
     
     
     
-    <category term="blog" scheme="https://sinevil.github.io/tags/blog/"/>
+    <category term="blog" scheme="https://oops-re.github.io/tags/blog/"/>
     
   </entry>
   
