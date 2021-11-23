@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HTML学习笔记 | blog</title><script src="https://cdn.bootcss.com/valine/1.4.4/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+</head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a><a href="/schedule/">Synopsis</a></nav></header><main style="flex-direction: row-reverse"><article><div id="post-bg"><div id="post-title"><h1>HTML学习笔记</h1><hr></div><div id="post-content"><p><strong>前言：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个简单的html代码，但是这一个html文件中最基本的，也是最基础的格式。接下来就先根据这段代码来认识html。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line">这和=行代码用于声明该文档为HTML5文档</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	......</span><br><span class="line">	......</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">由这两个<span class="tag">&lt;<span class="name">html</span>&gt;</span>、<span class="tag">&lt;/<span class="name">html</span>&gt;</span>包裹的代码构成一个完整的HTML网页</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">.....</span><br><span class="line">    .....</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">头部元素，文档的元（meta）数据</span><br><span class="line">例如：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">定义网页编码格式为 utf-8</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>目前在大部分浏览器中，直接输出中文会出现中文乱码的情况，这时候我们就需要在头部将字符声明为 UTF-8 或 GBK。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">.....</span><br><span class="line">    .....</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">在网页中可见的部分</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;title&gt; 元素描述了文档的标题</span><br><span class="line">&lt;h1&gt; 元素定义一个大标题</span><br><span class="line">&lt;p&gt; 元素定义一个段落</span><br></pre></td></tr></table></figure>
+
+<p>其次这些由尖括号包裹的就是<strong>HTML标签</strong>，同时这些标签都是成对出现的，比如<html>和</html>,前面的是<strong>开始标签</strong>和<strong>闭合标签</strong></p>
+<h2 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h2><h3 id="1-1HTML标题"><a href="#1-1HTML标题" class="headerlink" title="1.1HTML标题"></a>1.1HTML标题</h3><p>HTML标题（Heading）是通过</p><h1>~<h6>标签来定义的<p></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;这是一个标题&lt;/h2&gt;</span><br><span class="line">&lt;h3&gt;这是一个标题&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
+
+<p>运行效果：</p>
+<img src="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20211118181515854.png" alt="image-20211118181515854" style="zoom:50%;">
+
+<p>也就是说，随着数字的增大，标题字体变小，但都会进行一个加粗处理</p>
+<h3 id="1-2HTML段落"><a href="#1-2HTML段落" class="headerlink" title="1.2HTML段落"></a>1.2HTML段落</h3><p>HTML 段落是通过标签 </p><p> 来定义的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;这是另外一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：![image-20211118183159519](E:\mkd\hexo\source_posts\HTML学习笔记\image-20211118183159519.png</p>
+<h3 id="1-3HTML链接"><a href="#1-3HTML链接" class="headerlink" title="1.3HTML链接"></a>1.3HTML链接</h3><p>HTML 链接是通过标签 <a> 来定义的。</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;https://www.runoob.com&quot;</span>&gt;这是一个链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mkd\hexo\source\_posts\HTML学习笔记\image-20211118202224683.png" alt="image-20211118202224683" style="zoom:50%;">
+
+<p>会出现一个链接，点击即进入网址</p>
+<p>在链接中可以使用<strong>id属性</strong>来达到书签的效果</p>
+<h3 id="1-4-HTML图片"><a href="#1-4-HTML图片" class="headerlink" title="1.4 HTML图片"></a>1.4 HTML图片</h3><p>通过标签<image>来实现</image></p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img loading=<span class="string">&quot;lazy&quot;</span> src=<span class="string">&quot;http://tva3.sinaimg.cn/mw1024/006yt1Omgy1gwiju7rjd8j32gw1p47wj.jpg&quot;</span> width=<span class="string">&quot;540&quot;</span> height=<span class="string">&quot;390&quot;</span> /&gt;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+
+<p>实现：</p>
+<p><img src="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mkd\hexo\source_posts\HTML学习笔记\image-20211118210743175.png" alt="image-20211118210743175"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">width--宽度</span><br><span class="line"></span><br><span class="line">height--高度</span><br><span class="line"></span><br><span class="line">loading--表示延时上传，这里还可以用alt，表示当上传图片失败或无法显示时，显示后面的字符串</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-HTML元素"><a href="#2-HTML元素" class="headerlink" title="2.HTML元素"></a>2.HTML元素</h2><p><strong>html元素</strong>大致分为</p>
+<table>
+<thead>
+<tr>
+<th align="left">开始标签 *</th>
+<th align="left">元素内容</th>
+<th align="left">结束标签 *</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><p></p></td>
+<td align="left">这是一个段落</td>
+<td align="left"><p></p></td>
+</tr>
+<tr>
+<td align="left"><a href="default.htm"></a></td>
+<td align="left">这是一个链接</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><br></td>
+<td align="left">换行</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>==开始标签常被称为<strong>起始标签（opening tag）</strong>，结束标签常称为<strong>闭合标签（closing tag）</strong>==</p>
+<p>在拼写标签时对大小写并不敏感，也就是说<H>和<h>效果一样</h></H></p>
+<p>在编写HTML元素时，应该规范使用关闭标签，即便是空元素也使用<strong>闭合标签</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;就是空元素</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-HTML属性"><a href="#3-HTML属性" class="headerlink" title="3.HTML属性"></a>3.HTML属性</h2><p>在编写html元素时，我们可以对着这些元素添加一些属性</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTML 元素可以设置属性</span><br><span class="line">属性可以在元素中添加附加信息</span><br><span class="line">属性一般描述于开始标签</span><br><span class="line">属性总是以名称/值对的形式出现，比如：name=<span class="string">&quot;value&quot;</span>。</span><br></pre></td></tr></table></figure>
+
+<p>例如我们在编写<strong>链接元素</strong>时，<strong>href</strong>就是给这个元素添加了一个属性</p>
+<p>还有在编写图片元素，他的宽度和高度也是属性</p>
+<p>这里列举部分属性</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">class</td>
+<td align="left">为html元素定义一个或多个类名（classname）(类名从样式文件引入)</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="left">定义元素的唯一id</td>
+</tr>
+<tr>
+<td align="left">style</td>
+<td align="left">规定元素的行内样式（inline style）</td>
+</tr>
+<tr>
+<td align="left">title</td>
+<td align="left">描述了元素的额外信息 (作为工具条使用)</td>
+</tr>
+</tbody></table>
+<p>详细各种属性可查看<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-standardattributes.html">HTML 标准属性参考手册</a></p>
+<h2 id="4-HTML文本格式化"><a href="#4-HTML文本格式化" class="headerlink" title="4.HTML文本格式化"></a>4.HTML文本格式化</h2><p>缩写：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;abbr title=<span class="string">&quot;etcetera&quot;</span>&gt;etc.&lt;/abbr&gt;</span><br><span class="line">&lt;br /&gt;</span><br><span class="line">&lt;acronym title=<span class="string">&quot;World Wide Web&quot;</span>&gt;WWW&lt;/acronym&gt;</span><br><span class="line">在某些浏览器中，当您把鼠标移至缩略词语上时，title 可用于展示表达的完整版本。</span><br><span class="line">仅对于 IE <span class="number">5</span> 中的 acronym 元素有效。</span><br><span class="line">对于 Netscape <span class="number">6.2</span> 中的 abbr 和 acronym 元素都有效。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-HTML-文本格式化标签"><a href="#4-1-HTML-文本格式化标签" class="headerlink" title="4.1 HTML 文本格式化标签"></a>4.1 HTML 文本格式化标签</h3><table>
+<thead>
+<tr>
+<th align="left">标签</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><b></b></td>
+<td align="left">定义粗体文本</td>
+</tr>
+<tr>
+<td align="left"><em></em></td>
+<td align="left">定义着重文字</td>
+</tr>
+<tr>
+<td align="left"><i></i></td>
+<td align="left">定义斜体字</td>
+</tr>
+<tr>
+<td align="left"><smail></smail></td>
+<td align="left">定义小号字</td>
+</tr>
+<tr>
+<td align="left"><strong></strong></td>
+<td align="left">定义加重语气</td>
+</tr>
+<tr>
+<td align="left"><sub></sub></td>
+<td align="left">定义下标字</td>
+</tr>
+<tr>
+<td align="left"><sup></sup></td>
+<td align="left">定义上标字</td>
+</tr>
+<tr>
+<td align="left"><ins></ins></td>
+<td align="left">定义插入字</td>
+</tr>
+<tr>
+<td align="left"><del></del></td>
+<td align="left">定义删除字</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-HTML-“计算机输出”-标签"><a href="#4-2-HTML-“计算机输出”-标签" class="headerlink" title="4.2 HTML “计算机输出” 标签"></a>4.2 HTML “计算机输出” 标签</h3><table>
+<thead>
+<tr>
+<th align="left">标签</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code></code></td>
+<td align="left">定义计算机代码</td>
+</tr>
+<tr>
+<td align="left"><kbd></kbd></td>
+<td align="left">定义键盘码</td>
+</tr>
+<tr>
+<td align="left"><samp></samp></td>
+<td align="left">定义计算机代码样本</td>
+</tr>
+<tr>
+<td align="left"><var></var></td>
+<td align="left">定义变量</td>
+</tr>
+<tr>
+<td align="left"><pre></pre></td>
+<td align="left">定义预格式文本</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-HTML-引文-引用-及标签定义"><a href="#4-3-HTML-引文-引用-及标签定义" class="headerlink" title="4.3 HTML 引文, 引用, 及标签定义"></a>4.3 HTML 引文, 引用, 及标签定义</h3><table>
+<thead>
+<tr>
+<th align="left">标签</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><abbr></abbr></td>
+<td align="left">定义缩写</td>
+</tr>
+<tr>
+<td align="left"><adress></adress></td>
+<td align="left">定义地址</td>
+</tr>
+<tr>
+<td align="left"><bdo></bdo></td>
+<td align="left">定义文字方向</td>
+</tr>
+<tr>
+<td align="left"><blockquote></blockquote></td>
+<td align="left">定义长的引用</td>
+</tr>
+<tr>
+<td align="left"><q></q></td>
+<td align="left">定义短的引用语</td>
+</tr>
+<tr>
+<td align="left"><cite></cite></td>
+<td align="left">定义引用、引证</td>
+</tr>
+<tr>
+<td align="left"><dfn></dfn></td>
+<td align="left">定义一个定义项目。</td>
+</tr>
+</tbody></table></h6></h1><div id="paginator"></div></div><div id="post-footer"><hr><a href="/2021/11/17/markdown/">markdown Next →</a><hr></div><div id="bottom-btn"><a id="to-index" href="#post-index" title="index">≡</a><a id="to-top" href="#post-title" title="to top">∧</a></div><div id="Valine"></div><script>new Valine({
+ el: '#Valine'
+ , appId: ''
+ , appKey: ''
+ , placeholder: '此条评论委托企鹅物流发送'
+})</script></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/"> Dr.Pbbbbb</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">5</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">2</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">1</span></div></section></div><div id="aside-block"></div><footer style="text-align: right"><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><wbr><wbr><nobr>published with&nbsp;<a target="_blank" rel="noopener" href="http://hexo.io">Hexo&nbsp;</a></nobr><wbr><nobr>Theme&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight&nbsp;</a></nobr><wbr><nobr>by&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script></body></html>
