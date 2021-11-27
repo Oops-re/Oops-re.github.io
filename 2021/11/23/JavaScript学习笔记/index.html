@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JavaScript学习笔记 | blog</title><script src="https://cdn.bootcss.com/valine/1.4.4/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+</head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a><a href="/schedule/">Synopsis</a></nav></header><main style="flex-direction: row-reverse"><article><div id="post-bg"><div id="post-title"><h1>JavaScript学习笔记</h1><hr></div><div id="post-content"><p>能实现的事：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">直接写入HTML流</span><br><span class="line">    document.write(<span class="string">&quot;&lt;h1&gt;这是一个标题&lt;/h1&gt;&quot;</span>);</span><br><span class="line"><span class="comment">//即使用这个语句，可以直接写入HTML语句</span></span><br><span class="line">对事件产生反应</span><br><span class="line">    &lt;button type=<span class="string">&quot;button&quot;</span> onclick=<span class="string">&quot;alert(&#x27;欢迎!&#x27;)&quot;</span>&gt;点我!&lt;/button&gt;</span><br><span class="line"><span class="comment">//该语句会生成一个 按钮 点击后 弹窗 欢迎！</span></span><br><span class="line">改变HTML内容</span><br><span class="line">    x=document.getElementById(<span class="string">&quot;demo&quot;</span>);  <span class="comment">//查找元素</span></span><br><span class="line">	x.innerHTML=<span class="string">&quot;Hello JavaScript&quot;</span>;    <span class="comment">//改变内容</span></span><br><span class="line"><span class="comment">//该语句会将 id为demo 的html内容 修改 为 Hello JavaScript</span></span><br><span class="line">改变HTML图像</span><br><span class="line"><span class="comment">//即能动态地改变 HTML &lt;image&gt; 的来源（src）</span></span><br><span class="line">改变HTML样式</span><br><span class="line">验证输入</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>总之JavaScript脚本的功能很强大</p>
+<h2 id="2-JavaScript用法"><a href="#2-JavaScript用法" class="headerlink" title="2.JavaScript用法"></a>2.JavaScript用法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在html文件中添加脚本时，添加的脚本段必须用&lt;script&gt;和&lt;/script&gt;包裹，同时这部分脚本块可以根据你的需求，放置在&lt;body&gt;或&lt;head&gt;中</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1在-lt-head-gt-或者-lt-body-gt-的JavaScript"><a href="#2-1在-lt-head-gt-或者-lt-body-gt-的JavaScript" class="headerlink" title="2.1在 &lt;head&gt; 或者 &lt;body&gt; 的JavaScript"></a>2.1在 &lt;head&gt; 或者 &lt;body&gt; 的JavaScript</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">您可以在 HTML 文档中放入不限数量的脚本。</span><br><span class="line"></span><br><span class="line">脚本可位于 HTML 的 &lt;body&gt; 或 &lt;head&gt; 部分中，或者同时存在于两个部分中。</span><br><span class="line"></span><br><span class="line">通常的做法是把函数放入 &lt;head&gt; 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-外部的-JavaScript"><a href="#2-2-外部的-JavaScript" class="headerlink" title="2.2 外部的 JavaScript"></a>2.2 外部的 JavaScript</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。</span><br><span class="line"></span><br><span class="line">外部 JavaScript 文件的文件扩展名是 .js。</span><br><span class="line"></span><br><span class="line">如需使用外部文件，请在 &lt;script&gt; 标签的 <span class="string">&quot;src&quot;</span> 属性中设置该 .js 文件：</span><br><span class="line">    eg：</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;myScript.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">    <span class="comment">//效果类似于c的头文件或者java的包</span></span><br><span class="line">注：外部 javascript 文件不使用 &lt;script&gt; 标签，直接写 javascript 代码</span><br></pre></td></tr></table></figure>
+
+<p>拓展知识：[如何通过浏览器调试JavaScript](<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-chrome.html">Chrome 浏览器中执行 JavaScript | 菜鸟教程 (runoob.com)</a>)</p>
+<h2 id="3-JavaScript-输出"><a href="#3-JavaScript-输出" class="headerlink" title="3.JavaScript 输出"></a>3.JavaScript 输出</h2><p>首先JavaScript不想其他编程语言，他没有任何专门的打印或者输出的函数，但你可以通过其他方式来显示数据。</p>
+<ol>
+<li><p>使用 <strong>window.alert()</strong> 弹出警告框。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">使用window.alert()</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;我的第一个页面&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;我的第一个段落。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.alert(<span class="number">5</span> + <span class="number">6</span>);<span class="comment">//中间可以是字符串，也可以是公式</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中。</p>
+</li>
+<li><p>使用 <strong>innerHTML</strong> 写入到 HTML 元素。</p>
+</li>
+<li><p>使用 <strong>console.log()</strong> 写入到浏览器的控制台。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">如果您的浏览器支持调试，你可以使用 console.<span class="built_in">log</span>() 方法在浏览器中显示 JavaScript 值。</span><br><span class="line"></span><br><span class="line">浏览器中使用 F12 来启用调试模式， 在调试窗口中点击 <span class="string">&quot;Console&quot;</span> 菜单。</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;我的第一个 Web 页面&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">a = <span class="number">5</span>;</span><br><span class="line">b = <span class="number">6</span>;</span><br><span class="line">c = a + b;</span><br><span class="line">console.<span class="built_in">log</span>(c);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/11/23/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mkd\hexo\source_posts\JavaScript学习笔记\console-log.jpg"></p>
+</li>
+</ol>
+<h2 id="4-javaScript-语法"><a href="#4-javaScript-语法" class="headerlink" title="4.javaScript 语法"></a>4.javaScript 语法</h2> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 是一个脚本语言。</span><br><span class="line"></span><br><span class="line">它是一个轻量级，但功能强大的编程语言。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在编写脚本时，&lt;script&gt;&lt;/script&gt;中间的语法规则按照正常的编程语法</span><br><span class="line">    包括每条语句用 <span class="string">&#x27;;&#x27;</span>隔开</span><br><span class="line">    批注为 <span class="string">&#x27;//&#x27;</span>、<span class="string">&#x27;/**/&#x27;</span></span><br><span class="line">    以及关键字有 <span class="string">&quot;for&quot;</span>、<span class="string">&quot;while&quot;</span>、<span class="string">&quot;switch&quot;</span>……</span><br><span class="line">您可以在文本字符串中使用反斜杠对代码行进行换行：</span><br><span class="line">    document.write(<span class="string">&quot;你好 \</span></span><br><span class="line"><span class="string">世界!&quot;</span>);</span><br><span class="line">不能这样：</span><br><span class="line">    document.write \ </span><br><span class="line">(<span class="string">&quot;你好世界!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-字面量"><a href="#4-1-字面量" class="headerlink" title="4.1 字面量"></a>4.1 字面量</h3><p>字面量就是C或其他编程语言中的固定值，即<strong>常量</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">包括：</span><br><span class="line">    数字字面量；</span><br><span class="line">    <span class="comment">//1，1.011,10e2</span></span><br><span class="line">    字符串字面量；</span><br><span class="line">    <span class="comment">//&#x27;javascript&#x27;</span></span><br><span class="line">    表达式字面量；</span><br><span class="line">    <span class="comment">//5 * 6</span></span><br><span class="line">    数组字面量；</span><br><span class="line">    <span class="comment">//[1,2,3,4,5]</span></span><br><span class="line">    对象字面量；</span><br><span class="line">   <span class="comment">// &#123;firstName:&quot;John&quot;, lastName:&quot;Doe&quot;, age:50, eyeColor:&quot;blue&quot;&#125;</span></span><br><span class="line">    函数字面量；</span><br><span class="line">    <span class="comment">//function myFunction(a, b) &#123; return a * b;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-2JavaScript-变量"><a href="#4-2JavaScript-变量" class="headerlink" title="4.2JavaScript 变量"></a>4.2JavaScript 变量</h3><p>在编程语言中，变量用于存储数据值。</p>
+<p>JavaScript 使用关键字 <strong>var</strong> 来定义变量， 使用等号来为变量赋值：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> length;</span></span><br><span class="line"><span class="javascript">length = <span class="number">6</span>;</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = length;</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3JavaScript-关键字"><a href="#4-3JavaScript-关键字" class="headerlink" title="4.3JavaScript 关键字"></a>4.3JavaScript 关键字</h3><p>JavaScript 关键字用于标识要执行的操作。</p>
+<p>和其他任何编程语言一样，JavaScript 保留了一些关键字为自己所用。</p>
+<p><strong>var</strong> 关键字告诉浏览器创建一个新的变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = <span class="number">5</span> + <span class="number">6</span>;</span><br><span class="line">var y = x * <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>JavaScript 同样保留了一些关键字，这些关键字在当前的语言版本中并没有使用，但在以后 JavaScript 扩展中会用到。</p>
+<p>以下是 JavaScript 中最重要的保留字（按字母顺序）：</p>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>else</th>
+<th>instanceof</th>
+<th>super</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>enum</td>
+<td>int</td>
+<td>switch</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>break</td>
+<td>export</td>
+<td>interface</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>byte</td>
+<td>extends</td>
+<td>let</td>
+<td>this</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>case</td>
+<td>false</td>
+<td>long</td>
+<td>throw</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>catch</td>
+<td>final</td>
+<td>native</td>
+<td>throws</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td>finally</td>
+<td>new</td>
+<td>transient</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>class</td>
+<td>float</td>
+<td>null</td>
+<td>true</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>const</td>
+<td>for</td>
+<td>package</td>
+<td>try</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>continue</td>
+<td>function</td>
+<td>private</td>
+<td>typeof</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>debugger</td>
+<td>goto</td>
+<td>protected</td>
+<td>var</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>if</td>
+<td>public</td>
+<td>void</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td>implements</td>
+<td>return</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>do</td>
+<td>import</td>
+<td>short</td>
+<td>while</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>in</td>
+<td>static</td>
+<td>with</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var length = 16;                                  // Number 通过数字字面量赋值</span><br><span class="line">var points = x * 10;                              // Number 通过表达式字面量赋值</span><br><span class="line">var lastName = &quot;Johnson&quot;;                         // String 通过字符串字面量赋值</span><br><span class="line">var cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];              // Array  通过数组字面量赋值</span><br><span class="line">var person = &#123;firstName:&quot;John&quot;, lastName:&quot;Doe&quot;&#125;;  // Object 通过对象字面量赋值</span><br></pre></td></tr></table></figure>
+
+<p>注意JavaScript 使用 Unicode 字符集。Unicode 覆盖了所有的字符，包含标点等字符。</p>
+<h2 id="5-JavaScript-作用域"><a href="#5-JavaScript-作用域" class="headerlink" title="5.JavaScript 作用域"></a>5.JavaScript 作用域</h2><p>作用域是可访问变量的集合。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在 JavaScript 中, 对象和函数同样也是变量。</span><br><span class="line"></span><br><span class="line">在 JavaScript 中, 作用域为可访问变量，对象，函数的集合。</span><br><span class="line"></span><br><span class="line">JavaScript 函数作用域: 作用域在函数内修改。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-1局部作用域"><a href="#5-1局部作用域" class="headerlink" title="5.1局部作用域"></a>5.1局部作用域</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量在函数内声明，变量为局部作用域。</span><br><span class="line">局部变量：只能在函数内部访问。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;局部变量在声明的函数外不可以访问。&lt;/p&gt;</span><br><span class="line">&lt;p id=<span class="string">&quot;demo&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">myFunction();</span><br><span class="line">document.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = <span class="string">&quot;carName 的类型是：&quot;</span> +  typeof carName;</span><br><span class="line"><span class="function">function <span class="title">myFunction</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    var carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-全局作用域"><a href="#5-2-全局作用域" class="headerlink" title="5.2 全局作用域"></a>5.2 <strong>全局作用域</strong></h3><p>变量在函数外定义，即为全局变量。</p>
+<p>全局变量有 <strong>全局作用域</strong>: 网页中所有脚本和函数均可使用。 </p>
+<p>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</p>
+<p>有两种类型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line">    var carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function">function <span class="title">myFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span></span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function">function <span class="title">myFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-JavaScript-变量生命周期"><a href="#5-3-JavaScript-变量生命周期" class="headerlink" title="5.3 JavaScript 变量生命周期"></a>5.3 JavaScript 变量生命周期</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 变量生命周期在它声明时初始化。</span><br><span class="line"></span><br><span class="line">局部变量在函数执行完毕后销毁。</span><br><span class="line"></span><br><span class="line">全局变量在页面关闭后销毁。</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-JavaScript-事件"><a href="#6-JavaScript-事件" class="headerlink" title="6.JavaScript 事件"></a>6.JavaScript 事件</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML 事件是发生在 HTML 元素上的事情。</span><br><span class="line"></span><br><span class="line">当在 HTML 页面中使用 JavaScript 时， JavaScript 可以触发这些事件。</span><br></pre></td></tr></table></figure>
+
+<p>触发事件的可以是浏览器也就是<strong>浏览器行为</strong>，<strong>用户行为</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实例：</span><br><span class="line">HTML 页面完成加载</span><br><span class="line">HTML input 字段改变时</span><br><span class="line">HTML 按钮被点击</span><br></pre></td></tr></table></figure>
+
+<p>案例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt; </span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onclick=<span class="string">&quot;getElementById(&#x27;demo&#x27;).innerHTML=Date()&quot;</span>&gt;现在的时间是?&lt;/button&gt;</span><br><span class="line">&lt;p id=<span class="string">&quot;demo&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><button onclick="getElementById('demo').innerHTML=Date()">现在的时间是?</button></p>
+<p id="demo"></p>
+
+<h3 id="6-1JavaScript-可以做什么"><a href="#6-1JavaScript-可以做什么" class="headerlink" title="6.1JavaScript 可以做什么?"></a>6.1JavaScript 可以做什么?</h3><p>事件可以用于处理表单验证，用户输入，用户行为及浏览器动作:</p>
+<ul>
+<li>页面加载时触发事件</li>
+<li>页面关闭时触发事件</li>
+<li>用户点击按钮执行动作</li>
+<li>验证用户输入内容的合法性</li>
+<li>等等 …</li>
+</ul>
+<p>可以使用多种方法来执行 JavaScript 事件代码：</p>
+<ul>
+<li>HTML 事件属性可以直接执行 JavaScript 代码</li>
+<li>HTML 事件属性可以调用 JavaScript 函数</li>
+<li>你可以为 HTML 元素指定自己的事件处理程序</li>
+<li>你可以阻止事件的发生。</li>
+<li>等等 …</li>
+</ul><div id="paginator"></div></div><div id="post-footer"><hr><a href="/2021/11/27/OD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">← Prev OD学习笔记</a><span style="color: #fe2"> | </span><a href="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">HTML学习笔记 Next →</a><hr></div><div id="bottom-btn"><a id="to-index" href="#post-index" title="index">≡</a><a id="to-top" href="#post-title" title="to top">∧</a></div><div id="Valine"></div><script>new Valine({
+ el: '#Valine'
+ , appId: ''
+ , appKey: ''
+ , placeholder: '此条评论委托企鹅物流发送'
+})</script></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/"> Dr.Pbbbbb</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">7</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">3</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">1</span></div></section></div><div id="aside-block"></div><footer style="text-align: right"><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><wbr><wbr><nobr>published with&nbsp;<a target="_blank" rel="noopener" href="http://hexo.io">Hexo&nbsp;</a></nobr><wbr><nobr>Theme&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight&nbsp;</a></nobr><wbr><nobr>by&nbsp;<a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script></body></html>
