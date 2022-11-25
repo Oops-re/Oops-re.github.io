@@ -428,19 +428,69 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/11/25/%E8%8A%B1%E6%8C%87%E4%BB%A4%E9%9A%8F%E8%AE%B0/">
+                
+                <span class="abstract-title-text">花指令随记</span>
+            </a>
+            <div class="abstract-content">
+                分为两大类：
+
+可执行花指令
+不可执行花指令
+
+可执行花指令IDApro函数的识别分析失败是因为IDA检测出堆栈操作破坏堆栈平衡
+
+函数调用首先要知道一个函数的调用以及返回的栈变化
+
+1234567call label                          ---push 下一条指令的地址/mov eip,offset labellabel:add [esp],5            ---[esp]+5ret            --- pop eip
+
+
+IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
+
+混淆特征码
+
+1234mov op1,op2  ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/11/25">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Re">Re</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/11/24/ROP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 
                 <span class="abstract-title-text">ROP学习笔记</span>
             </a>
             <div class="abstract-content">
                 
-
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/24">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/24</span>
                 </div>
                 <!-- tags -->
@@ -514,7 +564,7 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/12/20">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/12/20</span>
                 </div>
                 <!-- tags -->
@@ -548,10 +598,18 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/03/30">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/27</span>
                 </div>
                 <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Re">Re</a>
+    
+</div>
+
                 
             </div>
         </article>
@@ -576,7 +634,7 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/27">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/23</span>
                 </div>
                 <!-- tags -->
@@ -612,7 +670,7 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/23">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/18</span>
                 </div>
                 <!-- tags -->
@@ -655,10 +713,18 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/17">
+                <div class="abstract-date" title="Last updated: 2022/11/25">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/17</span>
                 </div>
                 <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="语法">语法</a>
+    
+</div>
+
                 
             </div>
         </article>
@@ -854,7 +920,24 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -889,7 +972,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -903,6 +986,12 @@
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span>
+            <a class="archive-post-title" href="/2022/11/25/%E8%8A%B1%E6%8C%87%E4%BB%A4%E9%9A%8F%E8%AE%B0/">花指令随记</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/24</span>
@@ -993,6 +1082,16 @@
             <span class="sidebar-tag-name" data-tags="Pwn">
                 <span class="iconfont-archer">&#xe606;</span>
                 Pwn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="语法">
+                <span class="iconfont-archer">&#xe606;</span>
+                语法
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Re">
+                <span class="iconfont-archer">&#xe606;</span>
+                Re
             </span>
         
     </div>
