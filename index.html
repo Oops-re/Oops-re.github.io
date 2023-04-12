@@ -284,7 +284,7 @@
     <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://iw233.cn/api/Random.php)"></div>
+    <div class="site-intro-img" style="background-image: url(https://www.loliapi.com/acg/pc/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -435,6 +435,213 @@
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
                 <main class="main index-page">
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/12/CVE-2018-18708/">
+                
+                <span class="abstract-title-text">CVE-2018-18708</span>
+            </a>
+            <div class="abstract-content">
+                CVE-2018-018708复现参考：
+Tenda 路由器栈溢出详细分析（CVE-2018-18708）_黑客技术 (hackdig.com)
+相关信息：
+NVD - CVE-2018-18708 (nist.gov)
+该漏洞是处于httpd服务的缓冲区溢出漏洞，web服务器在处理post请求时，对ssid参数直接复制到栈上的一个局部变量中导致栈溢出
+第一次分析固件上的漏洞 磕磕绊绊捏Orz
+复现思路通过 ubuntu-qemu 起一个模拟路由的环境 然后通过宿主机对qemu启用的web服务器进行二进制攻击
+分析环境
+
+
+固件服务
+httpd(ELF)
+
+
+
+调试环境
+gdb
+
+
+静态...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CVE">CVE</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/">
+                
+                <span class="abstract-title-text">NCTF--复现</span>
+            </a>
+            <div class="abstract-content">
+                NCTF复现虽然比了两天，但是一题也没有做出来
+菜。。
+REVERSEez_revZ3爆破，由于对z3的不了解导致没有解出来QAQ
+（就是把Slover()放错位置辣）
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556from z3 import *checkstr=[0x7A, 0x08, 0x2E, 0xBA, 0xAD, 0xAF, 0x82, 0x8C, 0xEF, 0xD8,   0x0D, 0xF8, 0x99, 0xE...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/12/06">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/12/01/%E5%A4%8D%E7%8E%B0-%E5%AE%89%E6%B4%B5%E6%9D%AF/">
+                
+                <span class="abstract-title-text">复现--安洵杯</span>
+            </a>
+            <div class="abstract-content">
+                2022 安洵杯Reverse第一题还好reeee动调就能出
+但是后面看了官方是RC4变异
+然后其他题也好难QAQ
+看wp都复现不出来的程度
+我好菜。。。
+Re1
+wcstombs函数将a2转换会宽字节存到str处
+sub_7D11D0布置函数，也就是初始化
+sub_7D1280调用布置的函数
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758unsigned char ida_chars[] =&#123;  0xF1, ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/12/02">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/11/29/SYC2022-%E5%A4%8D%E7%8E%B0/">
+                
+                <span class="abstract-title-text">SYC2022--复现</span>
+            </a>
+            <div class="abstract-content">
+                <h1 id="极客大挑战-2022-复现"><a href="#极客大挑战-2022-复现" class="headerlink" title="[极客大挑战]2022 复现"></a>[极客大挑战]2022 复现</h1><p>这次的极客大挑战学到了不少东西，包括之前没有深入了解的</p>
+<p>android方面的逆向</p>
+<p>RC4加密与解密</p>
+<p>Base变表的爆破</p>
+<p>pwn方面</p>
+<p>主要还是在做题得到角度能到拓展</p>
+<p>（做出来的题就不复现了哈)….(@A@）</p>
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/12/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/11/26/Base64-CrakeTable/">
+                
+                <span class="abstract-title-text">Base64--CrakeTable</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/11/26">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/26</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
     
         
         
@@ -630,162 +837,11 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/23/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">JavaScript学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="JavaScript基础语法学习笔记"><a href="#JavaScript基础语法学习笔记" class="headerlink" title="JavaScript基础语法学习笔记"></a>JavaScript基础语法学习笔记</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</p>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">HTML学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="HTML-基本语法-学习笔记"><a href="#HTML-基本语法-学习笔记" class="headerlink" title="HTML 基本语法 学习笔记"></a>HTML 基本语法 学习笔记</h1>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HTML">HTML</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/17/markdown/">
-                
-                <span class="abstract-title-text">markdown</span>
-            </a>
-            <div class="abstract-content">
-                markdown语法学习1.标题语法：123456789//&quot;#&quot;一个＃字键叫一个空格分开，输入内容，该内容将被加粗加大到最大//“##”二级变大//“###”三级变大//通常用作目录/*# 加粗加大到最大 一级标题## 加粗加大到第二大 二级标题### 加粗加大到第三大 三级标题*/
-
-示例：
-标题标题标题标题2.字体：123456789//加粗**加粗内容**//代码高亮==int main==//删除线~~删除内容~~//斜体*斜体内容*
-
-加粗内容
-==高亮==
-删除内容斜体内容
-3.引用1234//引用语法：&gt;名字：&gt;&gt;年龄：&gt;&gt...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="语法">语法</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/11/blog/">
-                
-                <span class="abstract-title-text">blog</span>
-            </a>
-            <div class="abstract-content">
-                <meta name="referrer" content="no-referrer">
-
-<h1 id="搭建一个属于自己的博客"><a href="#搭建一个属于自己的博客" class="headerlink" title="搭建一个属于自己的博客"></a>搭建一个属于自己的博客</h1><p>（基于github和hexo搭建）</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E9%85%8D%E7%BD%AEssh-key">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E9%85%8D%E7%BD%AEssh-key</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">必备：</span><br><span class="line">    github账号</span><br><span class="line">    node.js</span><br><span class="line">    git <span class="keyword">for</span> windows</span><br></pre></td></tr></table></figure>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
+    
+        <nav class="page-nav">
+            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
+        </nav>
     
 </main>
 
@@ -1028,7 +1084,68 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1075,7 +1192,7 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -1086,9 +1203,48 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2023/04/12/CVE-2018-18708/">CVE-2018-18708</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/">NCTF--复现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span>
+            <a class="archive-post-title" href="/2022/12/01/%E5%A4%8D%E7%8E%B0-%E5%AE%89%E6%B4%B5%E6%9D%AF/">复现--安洵杯</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span>
+            <a class="archive-post-title" href="/2022/11/29/SYC2022-%E5%A4%8D%E7%8E%B0/">SYC2022--复现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2022/11/26/Base64-CrakeTable/">Base64--CrakeTable</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/25</span>
@@ -1135,18 +1291,6 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         </li>
     
         
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span>
-            <a class="archive-post-title" href="/2021/11/17/markdown/">markdown</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/11</span>
-            <a class="archive-post-title" href="/2021/11/11/blog/">blog</a>
-        </li>
-    
-        
             
             
                 
@@ -1161,15 +1305,36 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
             <a class="archive-post-title" href="/2022/11/24/hello-world/">Hello World</a>
         </li>
     
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2021/11/17/markdown/">markdown</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2021/11/11/blog/">blog</a>
+        </li>
+    
     </div>
 </div>
 
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="JavaScript">
+            <span class="sidebar-tag-name" data-tags="CVE">
                 <span class="iconfont-archer">&#xe606;</span>
-                JavaScript
+                CVE
             </span>
         
             <span class="sidebar-tag-name" data-tags="HTML">
@@ -1177,14 +1342,24 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
                 HTML
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Re">
+            <span class="sidebar-tag-name" data-tags="JavaScript">
                 <span class="iconfont-archer">&#xe606;</span>
-                Re
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="CTF">
+                <span class="iconfont-archer">&#xe606;</span>
+                CTF
             </span>
         
             <span class="sidebar-tag-name" data-tags="Pwn">
                 <span class="iconfont-archer">&#xe606;</span>
                 Pwn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Re">
+                <span class="iconfont-archer">&#xe606;</span>
+                Re
             </span>
         
             <span class="sidebar-tag-name" data-tags="blog">
