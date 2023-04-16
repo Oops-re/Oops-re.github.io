@@ -443,6 +443,44 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">
+                
+                <span class="abstract-title-text">afl_Fuzzing学习</span>
+            </a>
+            <div class="abstract-content">
+                Fuzzing系列学习参考：
+HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initiative
+原理生成随机输入并将其输入到目标程序中，以寻找程序中的漏洞
+123456789选择种子文件：AFL会选择一些种子文件，作为测试用例的基础，用于生成随机输入。种子文件可以是程序的正常输入，也可以是其他测试用例。插桩和监视：AFL会对目标程序进行插桩和监视，以便在程序执行时收集关键信息，比如代码覆盖率、分支覆盖率、路径覆盖率等。AFL会利用这些信息，帮助生成更加有针对性的测试用例。生成随机输入...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/16">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="PWN">PWN</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/04/12/CVE-2018-18708/">
                 
                 <span class="abstract-title-text">CVE-2018-18708</span>
@@ -795,48 +833,6 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/27/OD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">OD学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                OD的使用学习笔记学逆向必备工具，但是，由于之前知识储备不足，使用的时候总是看不懂，但这个假期又学了新知识，再来尝试尝试这个工具。
-这篇文章可能大致会分会两个部分，一部分为使用OD要用的汇编知识，一部分就是使用OD来分析一个个程序。
-需要在意的是OD只能分析32位的程序。
-汇编知识1.标志位
-在逆向中，需要在意的标志位只有3个，即cmp指令能修改的那三个：Z/O/C
-1234首先要知道cmp指令的作用：    cmp ax,bx	    cmp---比较语句，相当于执行减法，但结果不对ax,bx造成影响,但会对标志寄存器中的值造成影响，    		  从而实现JCC跳转
-
-123456Z...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Re">Re</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1109,7 +1105,20 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1192,7 +1201,7 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -1206,6 +1215,12 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span>
+            <a class="archive-post-title" href="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">afl_Fuzzing学习</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/12</span>
@@ -1352,14 +1367,19 @@ IDA主要还是看retn处的堆栈不平衡，没有将esp=ebp。
                 CTF
             </span>
         
+            <span class="sidebar-tag-name" data-tags="Re">
+                <span class="iconfont-archer">&#xe606;</span>
+                Re
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="Pwn">
                 <span class="iconfont-archer">&#xe606;</span>
                 Pwn
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Re">
+            <span class="sidebar-tag-name" data-tags="PWN">
                 <span class="iconfont-archer">&#xe606;</span>
-                Re
+                PWN
             </span>
         
             <span class="sidebar-tag-name" data-tags="blog">

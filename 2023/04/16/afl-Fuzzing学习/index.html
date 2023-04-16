@@ -19,29 +19,35 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="NCTF复现虽然比了两天，但是一题也没有做出来 菜。。 REVERSEez_revZ3爆破，由于对z3的不了解导致没有解出来QAQ （就是把Slover()放错位置辣） 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556from z3 impo">
+    <meta name="description" content="Fuzzing系列学习参考： HotSec&#x2F;Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initiative 原理生成随机输入并将其输入到目标程序中，以寻找程序中的漏洞 123456789选择种子文件：AFL会选择一些种子文件，作为测试用例的基础，用于生成随机输入。种子文件可以是程序的正常输入，也可以是其他">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NCTF--复现">
-<meta property="og:url" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:title" content="afl_Fuzzing学习">
+<meta property="og:url" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="oops-re&#39;blog">
-<meta property="og:description" content="NCTF复现虽然比了两天，但是一题也没有做出来 菜。。 REVERSEez_revZ3爆破，由于对z3的不了解导致没有解出来QAQ （就是把Slover()放错位置辣） 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556from z3 impo">
+<meta property="og:description" content="Fuzzing系列学习参考： HotSec&#x2F;Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initiative 原理生成随机输入并将其输入到目标程序中，以寻找程序中的漏洞 123456789选择种子文件：AFL会选择一些种子文件，作为测试用例的基础，用于生成随机输入。种子文件可以是程序的正常输入，也可以是其他">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202233732.png">
-<meta property="og:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202609114.png">
-<meta property="og:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202752613.png">
-<meta property="og:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206203402216.png">
-<meta property="og:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206203545894.png">
-<meta property="article:published_time" content="2022-12-06T12:13:07.000Z">
-<meta property="article:modified_time" content="2022-12-06T12:37:21.156Z">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230413160254000.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230413165703122.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414185257247.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414192656509.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414192523166.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414194113198.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414204613162.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414205059474.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416154548024.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416154633812.png">
+<meta property="og:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416125402504.png">
+<meta property="article:published_time" content="2023-04-16T07:53:55.000Z">
+<meta property="article:modified_time" content="2023-04-16T08:03:18.089Z">
 <meta property="article:author" content="Oops-re">
-<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="PWN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202233732.png">
+<meta name="twitter:image" content="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230413160254000.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/awke.ico">
     
-    <title>NCTF--复现 · Oops-re&#39;s Blog</title>
+    <title>afl_Fuzzing学习 · Oops-re&#39;s Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -266,7 +272,7 @@
                 <a href="/">Oops-re&#39;s Blog.</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">NCTF--复现</a>
+                <a href="#" class="post-name">afl_Fuzzing学习</a>
             </div>
         </div>
     
@@ -312,7 +318,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                NCTF--复现
+                afl_Fuzzing学习
             <!-- 404 -->
             
         </h1>
@@ -332,20 +338,20 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="PWN">PWN</a>
     
 </div>
 
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">656</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2022/12/06</span>
+                    <span class="post-intro-time">2023/04/16</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -500,43 +506,83 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h1 id="NCTF复现"><a href="#NCTF复现" class="headerlink" title="NCTF复现"></a>NCTF复现</h1><p>虽然比了两天，但是一题也没有做出来</p>
-<p>菜。。</p>
-<h2 id="REVERSE"><a href="#REVERSE" class="headerlink" title="REVERSE"></a>REVERSE</h2><h3 id="ez-rev"><a href="#ez-rev" class="headerlink" title="ez_rev"></a>ez_rev</h3><p>Z3爆破，由于对z3的不了解导致没有解出来QAQ</p>
-<p>（就是把Slover()放错位置辣）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> z3 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">checkstr=[<span class="number">0x7A</span>, <span class="number">0x08</span>, <span class="number">0x2E</span>, <span class="number">0xBA</span>, <span class="number">0xAD</span>, <span class="number">0xAF</span>, <span class="number">0x82</span>, <span class="number">0x8C</span>, <span class="number">0xEF</span>, <span class="number">0xD8</span>, </span><br><span class="line">  <span class="number">0x0D</span>, <span class="number">0xF8</span>, <span class="number">0x99</span>, <span class="number">0xEB</span>, <span class="number">0x2A</span>, <span class="number">0x16</span>, <span class="number">0x05</span>, <span class="number">0x43</span>, <span class="number">0x9F</span>, <span class="number">0xC8</span>, </span><br><span class="line">  <span class="number">0x6D</span>, <span class="number">0x0A</span>, <span class="number">0x7F</span>, <span class="number">0xBE</span>, <span class="number">0x76</span>, <span class="number">0x64</span>, <span class="number">0x2F</span>, <span class="number">0xA9</span>, <span class="number">0xAC</span>, <span class="number">0xF2</span>, </span><br><span class="line">  <span class="number">0xC9</span>, <span class="number">0x47</span>, <span class="number">0x75</span>, <span class="number">0x75</span>, <span class="number">0xB5</span>, <span class="number">0x33</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">src,key</span>):</span><br><span class="line">    des=[]</span><br><span class="line">    v3=key[<span class="number">3</span>]</span><br><span class="line">    v4=src[<span class="number">3</span>]</span><br><span class="line">    v5=key[<span class="number">0</span>]</span><br><span class="line">    v6=src[<span class="number">0</span>]</span><br><span class="line">    v7=src[<span class="number">1</span>]</span><br><span class="line">    v8=key[<span class="number">1</span>]</span><br><span class="line">    v9=src[<span class="number">2</span>]</span><br><span class="line">    v10 = (v6+v4)*(key[<span class="number">0</span>]+v3)</span><br><span class="line">    v11=key[<span class="number">2</span>]</span><br><span class="line">    v12=v3*(v6+v7)</span><br><span class="line">    v13=(v3+v11)*(v7-v4)</span><br><span class="line">    v14=v4 *(v11-v5)</span><br><span class="line">    v15=v5 * (v9+v4)</span><br><span class="line">    des.append(v14+v10+v13-v12)</span><br><span class="line">    des.append(v15+v14)</span><br><span class="line">    des.append(v6*(v8-v3)+v12)</span><br><span class="line">    des.append(v6*(v8-v3)+(v8+v5)*(v9-v6)+v10-v15)</span><br><span class="line">    <span class="keyword">return</span> des</span><br><span class="line"></span><br><span class="line">key=[<span class="number">0x7E</span>, <span class="number">0x1F</span>, <span class="number">0x19</span>, <span class="number">0x75</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flag =<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>):</span><br><span class="line">    s=Solver()</span><br><span class="line">    src=[BitVec(<span class="string">&quot;flag%i&quot;</span>%i,<span class="number">8</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>)]</span><br><span class="line">    v3=key[<span class="number">3</span>]</span><br><span class="line">    v4=src[<span class="number">3</span>]</span><br><span class="line">    v5=key[<span class="number">0</span>]</span><br><span class="line">    v6=src[<span class="number">0</span>]</span><br><span class="line">    v7=src[<span class="number">1</span>]</span><br><span class="line">    v8=key[<span class="number">1</span>]</span><br><span class="line">    v9=src[<span class="number">2</span>]</span><br><span class="line">    v10 = (v6+v4)*(key[<span class="number">0</span>]+v3)</span><br><span class="line">    v11=key[<span class="number">2</span>]</span><br><span class="line">    v12=v3*(v6+v7)</span><br><span class="line">    v13=(v3+v11)*(v7-v4)</span><br><span class="line">    v14=v4 *(v11-v5)</span><br><span class="line">    v15=v5 * (v9+v4)</span><br><span class="line">    s.add(checkstr[i*<span class="number">4</span>]==v14+v10+v13-v12)</span><br><span class="line">    s.add(checkstr[i*<span class="number">4</span>+<span class="number">1</span>]==v6*(v8-v3)+v12)</span><br><span class="line">    s.add(checkstr[i*<span class="number">4</span>+<span class="number">2</span>]==v15+v14)</span><br><span class="line">    s.add(checkstr[i*<span class="number">4</span>+<span class="number">3</span>]==v6*(v8-v3)+(v8+v5)*(v9-v6)+v10-v15)</span><br><span class="line">    <span class="keyword">if</span> s.check() == sat:</span><br><span class="line">        m=s.model()</span><br><span class="line">        flag += <span class="string">&quot;&quot;</span>.join([<span class="built_in">chr</span>(m.<span class="built_in">eval</span>(j).as_long()) <span class="keyword">for</span> j <span class="keyword">in</span> src])</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="Fuzzing系列学习"><a href="#Fuzzing系列学习" class="headerlink" title="Fuzzing系列学习"></a>Fuzzing系列学习</h1><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/HotSec/Fuzzing101">HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initiative</a></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>生成随机输入并将其输入到目标程序中，以寻找程序中的漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">选择种子文件：AFL会选择一些种子文件，作为测试用例的基础，用于生成随机输入。种子文件可以是程序的正常输入，也可以是其他测试用例。</span><br><span class="line"></span><br><span class="line">插桩和监视：AFL会对目标程序进行插桩和监视，以便在程序执行时收集关键信息，比如代码覆盖率、分支覆盖率、路径覆盖率等。AFL会利用这些信息，帮助生成更加有针对性的测试用例。</span><br><span class="line"></span><br><span class="line">生成随机输入：AFL会根据已有的种子文件和关键信息，生成大量的随机输入，并将其输入到目标程序中。AFL使用一种称为“变异”的技术，对已有的输入进行微小的修改，以生成新的测试用例。</span><br><span class="line"></span><br><span class="line">检测崩溃和异常：AFL会检测目标程序在执行测试用例时是否出现崩溃和异常情况。如果出现异常情况，AFL会将该测试用例标记为“有趣的”，并将其用作下一轮的种子文件，以便生成更多有针对性的测试用例。</span><br><span class="line"></span><br><span class="line">迭代测试：AFL会不断迭代测试过程，生成新的测试用例，并使用已有的关键信息帮助生成更加有针对性的测试用例，以发现更多的漏洞。</span><br></pre></td></tr></table></figure>
 
-<h3 id="just-run-it"><a href="#just-run-it" class="headerlink" title="just_run_it"></a>just_run_it</h3><p>简而言之，就是SM4加密</p>
-<p>但是</p>
-<p>看好像是IDA版本问题，IDA分析不是很准确，进而转汇编分析，还好不是很复杂</p>
-<p>额。。。IDA顺手清数据了，没保存。。</p>
-<p>主要就是先输入16字节的key<img src="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202233732.png" alt="image-20221206202233732"></p>
-<p>然后调用函数<strong>sub_407880</strong>key进行位置打乱</p>
-<p>（这里可以通过输入0~0xf得到对应的打乱顺序）</p>
-<p><img src="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202609114.png" alt="image-20221206202609114"></p>
-<p>然后就是将打乱后的key和另一个数组进行按位异或</p>
-<p>之后又进行一次位置的打乱</p>
-<p>然后就是key的check</p>
-<p><img src="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206202752613.png" alt="image-20221206202752613"></p>
-<p>得到最后的unk_428140加密后的key</p>
-<p>写脚本拿到key</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void func_1(char Rk[],char key[])&#123;</span><br><span class="line">	Rk[0x0]=key[0];</span><br><span class="line">Rk[0x1]=key[1];</span><br><span class="line">Rk[0x5]=key[2];</span><br><span class="line">Rk[0x6]=key[3];</span><br><span class="line">Rk[0x2]=key[4];</span><br><span class="line">Rk[0x4]=key[5];</span><br><span class="line">Rk[0x7]=key[6];</span><br><span class="line">Rk[0xc]=key[7];</span><br><span class="line">Rk[0x3]=key[8];</span><br><span class="line">Rk[0x8]=key[9];</span><br><span class="line">Rk[0xb]=key[10];</span><br><span class="line">Rk[0xd]=key[11];</span><br><span class="line">Rk[0x9]=key[12];</span><br><span class="line">Rk[0xa]=key[13];</span><br><span class="line">Rk[0xe]=key[14];</span><br><span class="line">Rk[0xf]=key[15];</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	char key[] =</span><br><span class="line">&#123;</span><br><span class="line">  0x11, 0x4D, 0x92, 0xDA, 0xAC, 0x0B, 0x62, 0xF7, 0x54, 0x51, </span><br><span class="line">  0x27, 0x5A, 0x72, 0x62, 0x7B, 0x76</span><br><span class="line">&#125;;</span><br><span class="line">	char xor_code[] =</span><br><span class="line">&#123;</span><br><span class="line">  0x46, 0x7C, 0xC1, 0x31, 0x67, 0xA2, 0xB4, 0x0D, 0x32, 0x11, </span><br><span class="line">  0x50, 0x15, 0x83, 0x3C, 0x14, 0x57</span><br><span class="line">&#125;;</span><br><span class="line">	char buf[16];</span><br><span class="line">	func_1(buf,key);</span><br><span class="line">	for(int i=0;i&lt;16;i++)&#123;</span><br><span class="line">		buf[i]^=xor_code[i];</span><br><span class="line">	&#125;</span><br><span class="line">	func_1(key,buf);</span><br><span class="line">	for(int i=0;i&lt;16;i++)&#123;</span><br><span class="line">		printf(&quot;%c&quot;,key[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="主要流程"><a href="#主要流程" class="headerlink" title="主要流程"></a>主要流程</h2><p>通过AFL生成大量变异文件</p>
+<p>AFL输入这些变异数据，监控crash情况</p>
+<p>测试产生crash的对应的变异文件 运行产生的错误</p>
+<p>gdb调试，根据崩溃点找到漏洞</p>
+<h2 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME</span><br><span class="line">git clone https://github.com/AFLplusplus/AFLplusplus &amp;&amp; cd AFLplusplus</span><br><span class="line">export LLVM_CONFIG=&quot;llvm-config-11&quot;</span><br><span class="line">make distrib</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
-<p>这里主要是从<strong>sub_41D188</strong>函数看到了SM4常量</p>
-<p><img src="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206203402216.png" alt="image-20221206203402216"></p>
-<p>然后拿着key和密文去解密</p>
-<p><img src="/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/image-20221206203545894.png" alt="image-20221206203545894"></p>
-<p>拿到flag</p>
-<p>NCTF{b23a271e-2b15-4bb5-9719-738cffb83919}</p>
+<p>测试 afl-fuzz</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230413160254000.png" alt="image-20230413160254000"></p>
+<h2 id="Exercise-1-Xpdf"><a href="#Exercise-1-Xpdf" class="headerlink" title="Exercise 1 -Xpdf"></a>Exercise 1 -Xpdf</h2><p><strong>Xpdf</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XpdfReader 是一个免费的（但不是开源的）PDF查看器，它包含一些在开源xpdf查看器中找不到的额外功能。跨平台</span><br></pre></td></tr></table></figure>
+
+<p> 开源的Xpdf工具包包含以下几个命令行工具,可以对PDF进行命令操作,实现对PDF文件多种转换操作及其他命令操作.</p>
+<ul>
+<li>pdftotext：将PDF转换为文本</li>
+<li>pdftops：将PDF转换为PostScript</li>
+<li>pdftoppm：将PDF页面转换为netpbm（PPM / PGM / PBM）图像文件</li>
+<li>pdftopng：将PDF页面转换为PNG图像文件</li>
+<li>pdftohtml：将PDF转换为HTML</li>
+<li>pdfinfo：提取PDF元数据</li>
+<li>pdfimages：从PDF文件中提取原始图像</li>
+<li>pdffonts：列出PDF文件中使用的字体</li>
+<li>pdfdetach：从PDF文件中提取附件</li>
+</ul>
+<h3 id="fuzzing"><a href="#fuzzing" class="headerlink" title="fuzzing"></a>fuzzing</h3><p>这里其实是在源码中编译插桩了，这是有源码的情况下使用</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230413165703122.png" alt="image-20230413165703122"></p>
+<p>经历了3个小时多 终于crach了QAQ。。。。</p>
+<p>吃了个饭。。洗了个澡，做了会儿作业…还没crash，还以为是它把洞修上了 结果 原来是我机器太拉了呀 放心了</p>
+<p>🤡🤡🤡</p>
+<h3 id="崩溃复现"><a href="#崩溃复现" class="headerlink" title="崩溃复现"></a>崩溃复现</h3><p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414185257247.png" alt="image-20230414185257247"></p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414192656509.png" alt="image-20230414192656509"></p>
+<p>段错误，内存泄漏</p>
+<h3 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h3><p>重新编译一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -r <span class="variable">$HOME</span>/fuzzing_xpdf/install</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$HOME</span>/fuzzing_xpdf/xpdf-3.02/</span><br><span class="line">make clean</span><br><span class="line">CFLAGS=<span class="string">&quot;-g -O0&quot;</span> CXXFLAGS=<span class="string">&quot;-g -O0&quot;</span> ./configure --prefix=<span class="string">&quot;<span class="variable">$HOME</span>/fuzzing_xpdf/install/&quot;</span></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>gdb调试 查看崩溃点的堆栈信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb --args <span class="variable">$HOME</span>/fuzzing_xpdf/install/bin/pdftotext <span class="variable">$HOME</span>/fuzzing_xpdf/out/default/crashes/id:000000,sig:11,src:001864,time:10787447,execs:6003676,op:havoc,rep:4 <span class="variable">$HOME</span>/fuzzing_xpdf/output</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414192523166.png" alt="image-20230414192523166"></p>
+<p>？？？为啥我是在getchar的报错捏？？？不会是我ubuntu18的问题叭？？挖到新洞了？？</p>
+<p>getchar也就是单字节？</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414194113198.png" alt="image-20230414194113198"></p>
+<p>这是溢出点的代码</p>
+<p>通过递归调用的，所以还是获得字符串</p>
+<p>下个断点看看xxxxx PIE呢 怎么断xxxx哎呀 这是通过coredump文件调的拉 地址不变捏 可以断</p>
+<p>原因</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414204613162.png" alt="image-20230414204613162"></p>
+<p>向错误地址读取数据 往上看一下eax怎么来的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x55555560122c &lt;EmbedStream::getChar()+66&gt;    mov    rax, qword ptr [rbp - 8]</span><br></pre></td></tr></table></figure>
+
+<p>参数传的</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230414205059474.png" alt="image-20230414205059474"></p>
+<p>这里传的</p>
+<p>调了一下0x00005555555a2aae处的execOp 看了一下 循环free了 然后 突然就跳到getchar()了 看一下 是call rax跳的（虚函数？动态绑定） 跳到opBeginImage，然后最后来到getchar()</p>
+<p>这里崩溃的原因是 EmbedStream 类没有初始化 导致成员函数limited为0，同时lenth也为0，执行了lenth–后，lenth=0xffffffffffffffff 然后 最后的崩毁 是没在虚表中找到getchar函数 </p>
+<p>嗷嗷 知道了这里就是由于没有初始化EmbedStream生成的对象 成员limited和lenth为0  </p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416154548024.png" alt="image-20230416154548024"></p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416154633812.png" alt="image-20230416154633812"></p>
+<p>看源码可以知道这里找的是strA 但由于strA没有初始化，是0（NULL）空 ，而这里又要调用str的方法，导致他无法正确寻址 找到无效地址 从而导致了崩溃</p>
+<p>所以 这里应该是个BUG 修复的话就是判断一下str是否为NULL应该也可以，或者判断一下这个对象有没有初始化。</p>
+<p>后面拿ubuntu20.04试了，雀氏是系统问题，20系统就是无限递归导致的栈溢出，</p>
+<p><img src="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/image-20230416125402504.png" alt="image-20230416125402504"></p>
+<p>这里引发的思考就是 怎么利用捏？ 布兹道QAQ</p>
+<p>怎么感觉 这就是一个程序的bug呀？？？？能利用吗？？拒绝服务？？</p>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://example.com">Oops-re</a>
-            <p>原文链接：<a href="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/">http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/</a>
-            <p>发表日期：<a href="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/">December 6th 2022, 8:13:07 pm</a>
-            <p>更新日期：<a href="http://example.com/2022/12/06/NCTF-%E5%A4%8D%E7%8E%B0/">December 6th 2022, 8:37:21 pm</a>
+            <p>原文链接：<a href="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/</a>
+            <p>发表日期：<a href="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">April 16th 2023, 3:53:55 pm</a>
+            <p>更新日期：<a href="http://example.com/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">April 16th 2023, 4:03:18 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -544,17 +590,12 @@
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2023/04/12/CVE-2018-18708/" title="CVE-2018-18708">
-                    <div class="nextTitle">CVE-2018-18708</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2022/12/01/%E5%A4%8D%E7%8E%B0-%E5%AE%89%E6%B4%B5%E6%9D%AF/" title="复现--安洵杯">
-                    <div class="prevTitle">复现--安洵杯</div>
+                <a href="/2023/04/12/CVE-2018-18708/" title="CVE-2018-18708">
+                    <div class="prevTitle">CVE-2018-18708</div>
                 </a>
             
         </li>
@@ -701,7 +742,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NCTF%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">NCTF复现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#REVERSE"><span class="toc-number">1.1.</span> <span class="toc-text">REVERSE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-rev"><span class="toc-number">1.1.1.</span> <span class="toc-text">ez_rev</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#just-run-it"><span class="toc-number">1.1.2.</span> <span class="toc-text">just_run_it</span></a></li></ol></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Fuzzing%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">Fuzzing系列学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">主要流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.3.</span> <span class="toc-text">工具下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exercise-1-Xpdf"><span class="toc-number">1.4.</span> <span class="toc-text">Exercise 1 -Xpdf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fuzzing"><span class="toc-number">1.4.1.</span> <span class="toc-text">fuzzing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B4%A9%E6%BA%83%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">崩溃复现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.4.3.</span> <span class="toc-text">分析原因</span></a></li></ol></li></ol></li></ol>
             </div>
         
         <!-- sidebar -->
