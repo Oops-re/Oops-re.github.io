@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="oops-re&#39;blog">
-<meta property="og:url" content="http://example.com/tags/PWN/index.html">
+<meta property="og:url" content="http://example.com/tags/pwn/index.html">
 <meta property="og:site_name" content="oops-re&#39;blog">
 <meta property="og:locale">
 <meta property="article:author" content="Oops-re">
@@ -428,29 +428,89 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2023/04/16/afl-Fuzzing%E5%AD%A6%E4%B9%A0/">
+            <a class="abstract-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E/">
                 
-                <span class="abstract-title-text">afl_Fuzzing学习</span>
+                <span class="abstract-title-text">简单复习--二进制漏洞</span>
             </a>
             <div class="abstract-content">
-                Fuzzing系列学习参考：
-HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initiative
-原理生成随机输入并将其输入到目标程序中，以寻找程序中的漏洞
-123456789选择种子文件：AFL会选择一些种子文件，作为测试用例的基础，用于生成随机输入。种子文件可以是程序的正常输入，也可以是其他测试用例。插桩和监视：AFL会对目标程序进行插桩和监视，以便在程序执行时收集关键信息，比如代码覆盖率、分支覆盖率、路径覆盖率等。AFL会利用这些信息，帮助生成更加有针对性的测试用例。生成随机输入...
+                二进制漏洞-简单总结常见漏洞
+12345栈溢出漏洞（Stack-Overflow）堆溢出漏洞（Heap-Overflow）释放后重引用漏洞（Use-After-Free）双重释放漏洞（Double-Free）越界访问漏洞（Out-of-bounds）
+
+栈溢出原理栈溢出是指程序在使用栈空间时，向栈中写入的数据超出了栈的大小，导致覆盖了栈的边界，破坏了程序的正常执行流程。
+常见利用点数组    
+
+危险函数：gets()、strcpy()、
+
+    好像C语言的库函数都挺不安全的...
+
+修复限制输入字符长度,修改危险函数的调用
+
+堆溢出原理堆溢出的原理是当程序向堆中分配内存时，分配的内...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/16">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/16</span>
+                <div class="abstract-date" title="Last updated: 2023/04/30">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/30</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="PWN">PWN</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="pwn">pwn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">
+                
+                <span class="abstract-title-text">简单复习--软件保护绕过</span>
+            </a>
+            <div class="abstract-content">
+                软件保护绕过GS保护cookie校验
+通过在生成栈帧的时候先插入一个cookie
+    cookie通过ebp^data节的第一个字（dword）
+在函数返回的时候校验cookie是否正确来保护栈，防止返回地址被溢出覆盖
+
+绕过方法
+攻击虚函数
+通过成员变量修改虚表 来达到控制程序流程且不触发GS的效果
+
+
+控制cookie
+函数未启用cookie校验safeSEH保护safeSEH表 – 由编译器生成，保存异常函数地址
+
+检验规则    
+绕过方法硬刚可以知道 执行异常函数的情况如下：
+1.跳转触发的异常函数地址位于本模块之外 且DEP关闭
+    通过堆溢出绕过，将shellcod...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/30">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/30</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="pwn">pwn</a>
     
 </div>
 
@@ -649,7 +709,37 @@ HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initi
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -746,7 +836,7 @@ HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initi
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 16
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -760,6 +850,18 @@ HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initi
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E/">简单复习--二进制漏洞</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">简单复习--软件保护绕过</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/23</span>
@@ -946,6 +1048,11 @@ HotSec/Fuzzing101: An step by step fuzzing tutorial. A GitHub Security Lab initi
             <span class="sidebar-tag-name" data-tags="语法">
                 <span class="iconfont-archer">&#xe606;</span>
                 语法
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pwn">
+                <span class="iconfont-archer">&#xe606;</span>
+                pwn
             </span>
         
     </div>

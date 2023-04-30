@@ -37,8 +37,20 @@
 <meta property="og:image" content="https://github.com/Oops-re/img/blob/main/upxhand.png?raw=true">
 <meta property="og:image" content="https://github.com/Oops-re/img/blob/main/compress_data.jpg?raw=true">
 <meta property="og:image" content="https://github.com/Oops-re/img/blob/main/loader.png?raw=true">
+<meta property="og:image" content="https://github.com/Oops-re/img/blob/main/upxhand3.png?raw=true">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230424161631580.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230424161709231.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230424170311338.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230424164356186.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230424183308500.png">
+<meta property="og:image" content="https://github.com/Oops-re/img/blob/main/upx_pushad.png?raw=true">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230425112446297.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230425115522791.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230425114457329.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230425123130810.png">
+<meta property="og:image" content="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users/86182/AppData/Roaming/Typora/typora-user-images/image-20230425154037149.png">
 <meta property="article:published_time" content="2023-04-23T14:02:49.000Z">
-<meta property="article:modified_time" content="2023-04-23T14:03:34.129Z">
+<meta property="article:modified_time" content="2023-04-25T07:44:21.943Z">
 <meta property="article:author" content="Oops-re">
 <meta property="article:tag" content="RE">
 <meta name="twitter:card" content="summary">
@@ -345,7 +357,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.7k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -605,6 +617,11 @@ UPX的加壳原理大致如下：
 <h4 id="pack2"><a href="#pack2" class="headerlink" title="pack2"></a>pack2</h4><p>压缩数据并添加到file中<br><img src="https://github.com/Oops-re/img/blob/main/compress_data.jpg?raw=true"></p>
 <h4 id="pack3"><a href="#pack3" class="headerlink" title="pack3"></a>pack3</h4><p>添加loader函数 在UPX运行时解压缩程序<br><img src="https://github.com/Oops-re/img/blob/main/loader.png?raw=true" alt="loader"></p>
 <h4 id="pack4"><a href="#pack4" class="headerlink" title="pack4"></a>pack4</h4><p>添加壳的头部</p>
+<p>这里添加的内容如下（这是Linux系统的UPX源码）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">PackUnix::writePackHeader</span><span class="params">(OutputFile *fo)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> buf[<span class="number">32</span>];</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="built_in">sizeof</span>(buf));</span><br><span class="line"></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> hsize = ph.<span class="built_in">getPackHeaderSize</span>();</span><br><span class="line">    <span class="built_in">assert</span>((<span class="type">unsigned</span>)hsize &lt;= <span class="built_in">sizeof</span>(buf));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// note: magic constants are always le32</span></span><br><span class="line">    <span class="built_in">set_le32</span>(buf+<span class="number">0</span>, UPX_MAGIC_LE32);<span class="comment">//UPX！--upx标签</span></span><br><span class="line">    <span class="built_in">set_le32</span>(buf+<span class="number">4</span>, UPX_MAGIC2_LE32);<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">checkPatch</span>(<span class="literal">nullptr</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);  <span class="comment">// reset</span></span><br><span class="line">    <span class="built_in">patchPackHeader</span>(buf, hsize);</span><br><span class="line">    <span class="built_in">checkPatch</span>(<span class="literal">nullptr</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);  <span class="comment">// reset</span></span><br><span class="line"></span><br><span class="line">    fo-&gt;<span class="built_in">write</span>(buf, hsize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PackUnix::pack4</span><span class="params">(OutputFile *fo, Filter &amp;)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">writePackHeader</span>(fo);</span><br><span class="line">    <span class="comment">//填写UPX的版本和upx标签</span></span><br><span class="line"></span><br><span class="line">    <span class="type">unsigned</span> tmp;</span><br><span class="line">    <span class="built_in">set_te32</span>(&amp;tmp, overlay_offset);</span><br><span class="line">    fo-&gt;<span class="built_in">write</span>(&amp;tmp, <span class="built_in">sizeof</span>(tmp));<span class="comment">//写入overlay_offset</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/Oops-re/img/blob/main/upxhand3.png?raw=true" alt="upx_hande"></p>
+<p>这里主要是和脱壳相关，所以这里删除啥的没有影响，但是这是UPX的一个特征码 这里就是脱壳机关心的东西，通过删除这些东西，可以做到初步免查壳，exeinfo_PE就看不到UPX的版本信息了，但是仍能识别UPX</p>
 <hr>
 <p>在运行的时候会生成两个临时文件 分别是xxx.upx和xxx.000<br>分别是 DOS头和DOS块 – xxx.upx<br>以及 添加了压缩数据 – xxx.000  （没有导入表）</p>
 <p>总结一下UPX加壳流程</p>
@@ -614,6 +631,62 @@ pack2()对数据段进行压缩，
 pack3()修改LOAD段，
 pack4()则添加最后的壳的头部，并修改壳的section段。
 </code></pre>
+<h2 id="绕过UPX查壳"><a href="#绕过UPX查壳" class="headerlink" title="绕过UPX查壳"></a>绕过UPX查壳</h2><p>一般市面上的查壳软件都是通过特征码进行识别的，虽然效率很高，但是 只要通过去除混淆特征码，那么就可以实现绕过查杀的目的。</p>
+<h3 id="特征码"><a href="#特征码" class="headerlink" title="特征码"></a>特征码</h3><p>就像PE文件都有MZ头一样，（MZ就算是PE文件的特征码）UPX也有自己的特征码</p>
+<p>包括</p>
+<ul>
+<li>UPX节表名</li>
+</ul>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230424161631580.png" alt="image-20230424161631580"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">通过学习PE文件结构我们可以知道，</span><br><span class="line">节表名在PE加载在内存中没有什么作用（起作用的主要还是VirtualAddress）</span><br><span class="line">所以我们修改这里的节表名 对PE文件的运行没有影响</span><br><span class="line">但 对于 UPX -d 这个自己的UPX解壳程序来说 他是通过检查PE的节表名来判断该文件是否有UPX壳</span><br><span class="line">所以这里修改一下 就能让UPX自己无法完成脱壳</span><br><span class="line">但是Exeinfo_PE还是可以查出来是UPX壳 甚至还有版本信息</span><br><span class="line">这就是关于下面的几个特征码了</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>UPX头</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230424161709231.png" alt="image-20230424161709231"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里是UPX头部，是通过Pack4()函数添加的，相关信息，各个字段所代表的属性 在上面已经列出</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ExeinfoPE就是通过这读取到的UPX版本信息，记录的都是和UPX和文件的基本信息，包括文件大小，压缩等级...</span><br><span class="line">替换这些信息也不会对PE文件的运行造成影响</span><br><span class="line">但ExeinfoPE获取到的UPX版本信息就会有错误，比如将版本字段改为6666</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230424170311338.png" alt="image-20230424170311338"></p>
+<p>但是仍然还有UPX壳的信息</p>
+<p>来看下一个特征码</p>
+</li>
+<li><p>psuhad … 机器码（60 BE …）</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230424164356186.png" alt="image-20230424164356186"></p>
+<p>这里的特征码是pushad的特征码，用作upx的loader</p>
+<p>exeinfoPE就是通过查特征码表查的</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230424183308500.png" alt="image-20230424183308500"></p>
+<p>改了这里以后 exeinfoPE还有是有疑似UPX的提示</p>
+<p><img src="https://github.com/Oops-re/img/blob/main/upx_pushad.png?raw=true" alt="pushad"></p>
+<p>还有什么捏 不到了</p>
+<p>点一下Scan/t 提示 “3个节的结构 似乎是UPX”（口翻一下）</p>
+<p>这里试一下再添加一个节</p>
+<p>添加一个空节</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;1&gt;判断节表区域是否有空闲区域添加一个节表.APEX</span><br><span class="line">&lt;2&gt;在节表中新增一个成员</span><br><span class="line">	复制其中一个 比较省事 这里复制了upx1节</span><br><span class="line">&lt;3&gt;修改PE头部中节的数量</span><br><span class="line">	标准PE头 3-》4</span><br><span class="line">&lt;4&gt;修改SizeOfImage的大小</span><br><span class="line">	可选PE头 原有+内存偏移</span><br><span class="line">&lt;5&gt;在原有的数据最后，新增一个节的数据（内存对齐的整数倍）</span><br><span class="line">	直接00</span><br><span class="line">&lt;6&gt;修正新增节表的属性</span><br><span class="line">    //可以便增加边修改</span><br><span class="line">    需要修改的节表属性</span><br><span class="line">    	VirtualAddress(在内存中的偏移) = 上一个节表的VirtualAddress+上一个节表的(Misc在内存中的大小（内存对齐整数倍）)	</span><br><span class="line">    	PointerToRawData（在文件中的偏移）</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230425112446297.png" alt="image-20230425112446297"></p>
+<p>可以看到显示了4个节，他就不知道是啥保护了，但是还有提示了有壳 试一下把入口改了</p>
+<p>在新增节的位置添加跳转代码 并修改OEP–》0x2f000</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230425115522791.png" alt="image-20230425115522791"></p>
+<p>虽然还有是提示有壳保护 但是 点击Scan/t他分析不出来是UPX了</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230425114457329.png" alt="image-20230425114457329"></p>
+<p>后面还有能咋弄捏？不到了QAQ</p>
+</li>
+</ul>
+<p>这里由于妹有改什么特别的东西直接ESP定律就能手脱捏</p>
+<p>虽然PE文件还是有点乱（毕竟多了一个节） 但是 IDA雀氏能分析了</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230425123130810.png" alt="image-20230425123130810"></p>
+<h3 id="手动加壳"><a href="#手动加壳" class="headerlink" title="手动加壳"></a>手动加壳</h3><p>再套一层 把upx的loader代码加密了 这应该就看不出了叭</p>
+<p>还是新增一个节 用来保存解密upx的代码 同时修改OEP</p>
+<p>这里和上面的一样</p>
+<p>加密oep代码</p>
+<p>010Editor进行异或0x10叭</p>
+<p>在apex节添加解密代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0042F000 | 60                       | pushad                                |保存一下现场</span><br><span class="line">0042F001 | 90                       | nop                                   |</span><br><span class="line">0042F002 | BF B0D34200              | mov edi,hello3.42D3B0                 | upx的解压缩</span><br><span class="line">0042F007 | B9 90010000              | mov ecx,190                           | 异或长度</span><br><span class="line">0042F00C | 80340F 10                | xor byte ptr ds:[edi+ecx],10          | 解密</span><br><span class="line">0042F010 | 83F9 00                  | cmp ecx,0                             | </span><br><span class="line">0042F013 | 74 03                    | je hello3.42F018                      |</span><br><span class="line">0042F015 | 49                       | dec ecx                               | ecx--</span><br><span class="line">0042F016 | EB F4                    | jmp hello3.42F00C                     |</span><br><span class="line">0042F018 | 61                       | popad                                 | 解压完成</span><br><span class="line">0042F019 | E9 92E3FFFF              | jmp hello3.42D3B0                     | 跳回upx解压缩</span><br></pre></td></tr></table></figure>
+
+<p>程序能跑再看一下 同样识别不出来UPX了</p>
+<p><img src="/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/Users\86182\AppData\Roaming\Typora\typora-user-images\image-20230425154037149.png" alt="image-20230425154037149"></p>
+<p>所以这也是一种绕过方法</p>
 
     </article>
     <!-- license -->
@@ -622,13 +695,18 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
             <p>原文作者：<a href="http://example.com">Oops-re</a>
             <p>原文链接：<a href="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/</a>
             <p>发表日期：<a href="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">April 23rd 2023, 10:02:49 pm</a>
-            <p>更新日期：<a href="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">April 23rd 2023, 10:03:34 pm</a>
+            <p>更新日期：<a href="http://example.com/2023/04/23/UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">April 25th 2023, 3:44:21 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/" title="简单复习--软件保护绕过">
+                    <div class="nextTitle">简单复习--软件保护绕过</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -782,7 +860,7 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">UPX逆向分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PE%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">PE分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">动态静态分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BEpacker%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">通过字符串查找packer函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sub-469900"><span class="toc-number">1.2.2.</span> <span class="toc-text">sub_469900</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sub-469340"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">sub_469340</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dopack-%E2%80%93-sub-457BA0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">dopack – sub_457BA0函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pack1"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">pack1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack2"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">pack2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack3"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">pack3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack4"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">pack4</span></a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UPX%E9%80%86%E5%90%91%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">UPX逆向分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PE%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">PE分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">动态静态分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BEpacker%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">通过字符串查找packer函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sub-469900"><span class="toc-number">1.2.2.</span> <span class="toc-text">sub_469900</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sub-469340"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">sub_469340</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dopack-%E2%80%93-sub-457BA0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">dopack – sub_457BA0函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pack1"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">pack1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack2"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">pack2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack3"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">pack3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pack4"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">pack4</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87UPX%E6%9F%A5%E5%A3%B3"><span class="toc-number">1.3.</span> <span class="toc-text">绕过UPX查壳</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">特征码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%8A%A0%E5%A3%B3"><span class="toc-number">1.3.2.</span> <span class="toc-text">手动加壳</span></a></li></ol></li></ol></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -876,7 +954,37 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -973,7 +1081,7 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 16
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -987,6 +1095,18 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E/">简单复习--二进制漏洞</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2023/04/30/%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0-%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%BB%95%E8%BF%87/">简单复习--软件保护绕过</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/23</span>
@@ -1173,6 +1293,11 @@ pack4()则添加最后的壳的头部，并修改壳的section段。
             <span class="sidebar-tag-name" data-tags="语法">
                 <span class="iconfont-archer">&#xe606;</span>
                 语法
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pwn">
+                <span class="iconfont-archer">&#xe606;</span>
+                pwn
             </span>
         
     </div>
